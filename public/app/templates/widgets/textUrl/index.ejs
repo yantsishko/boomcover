@@ -1,0 +1,183 @@
+<div class="box-header with-border">
+    <h3 class="box-title"><i class="fa fa-cog pull-left"></i>Настройка виджета - Текст по ссылке</h3>
+</div>
+<!-- Custom Tabs -->
+<div class="col-md-12 nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Виджет</a></li>
+        <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки текста</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="col-md-12 tab-pane active" id="tab_1">
+            <div class="col-md-6 box-body">
+                <div class="col-md-12 checkbox visible-checkbox">
+                    <h5>Настройка времени</h5>
+                    <div class="col-md-12" style="margin-bottom: 10px;">
+                        <label>
+                            <input name="textUrl_time_show" <% if (showTextTime) {%> checked <%}%> type="checkbox"> Отображать по времени
+                        </label>
+                    </div>
+                    <div id="textUrl_time" style="display: <% if (showTextTime) { %> block <% } else {%>none <% } %>;">
+                        <div class="form-group" style="margin-bottom: 20px">
+                            <label style="margin-bottom: 10px;  padding-left: 0; font-weight: 500;">Часовой пояс</label>
+                            <select class="form-control select2" style="width: 100%;" name="textUrl_gmt">
+                                <option <% if (gmt === '11') {%> selected <%}%> value="11">GMT +11:00</option>
+                                <option <% if (gmt === '10') {%> selected <%}%> value="10">GMT +10:00</option>
+                                <option <% if (gmt === '9') {%> selected <%}%> value="9">GMT +09:00</option>
+                                <option <% if (gmt === '8') {%> selected <%}%> value="8">GMT +08:00</option>
+                                <option <% if (gmt === '7') {%> selected <%}%> value="7">GMT +07:00</option>
+                                <option <% if (gmt === '6') {%> selected <%}%> value="6">GMT +06:00</option>
+                                <option <% if (gmt === '5') {%> selected <%}%> value="5">GMT +05:00</option>
+                                <option <% if (gmt === '4') {%> selected <%}%> value="4">GMT +04:00</option>
+                                <option <% if (gmt === '3') {%> selected <%}%> value="3">GMT +03:00</option>
+                                <option <% if (gmt === '2') {%> selected <%}%> value="2">GMT +02:00</option>
+                                <option <% if (gmt === '1') {%> selected <%}%> value="1">GMT +01:00</option>
+                                <option <% if (gmt === '0') {%> selected <%}%> value="0">GMT 00:00</option>
+                                <option <% if (gmt === '-1') {%> selected <%}%> value="-1">GMT -01:00</option>
+                                <option <% if (gmt === '-2') {%> selected <%}%> value="-2">GMT -02:00</option>
+                                <option <% if (gmt === '-3') {%> selected <%}%> value="-3">GMT -03:00</option>
+                                <option <% if (gmt === '-4') {%> selected <%}%> value="-4">GMT -04:00</option>
+                                <option <% if (gmt === '-5') {%> selected <%}%> value="-5">GMT -05:00</option>
+                                <option <% if (gmt === '-6') {%> selected <%}%> value="-6">GMT -06:00</option>
+                                <option <% if (gmt === '-7') {%> selected <%}%> value="-7">GMT -07:00</option>
+                                <option <% if (gmt === '-8') {%> selected <%}%> value="-8">GMT -08:00</option>
+                                <option <% if (gmt === '-9') {%> selected <%}%> value="-9">GMT -09:00</option>
+                                <option <% if (gmt === '-10') {%> selected <%}%> value="-10">GMT -10:00</option>
+                                <option <% if (gmt === '-11') {%> selected <%}%> value="-11">GMT -11:00</option>
+                            </select>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-5 no-padding">
+                            <input class="form-control" id="textUrl_start" placeholder="Начало" value="<%= textStart %>">
+                        </div>
+                        <div class="col-md-2">
+                            <p style="font-size: 20px; text-align: center;"> - </p>
+                        </div>
+                        <div class="col-md-5 no-padding">
+                            <input class="form-control" id="textUrl_end" placeholder="Конец" value="<%= textEnd %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 box-body">
+                <div class="col-md-12 form-group">
+                    <label for="comment">Ссылка на текст</label>
+                    <input class="form-control"  name="textUrl_url" value="<%= url %>">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_2">
+            <div class="col-md-12 box-body">
+                <div class="col-md-6">
+                    <label>Размер текста</label>
+                    <div class="row margin">
+                        <div class="col-sm-12">
+                            <input id="textUrl_size" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="col-md-6 widget-text-editor">-->
+                    <!--<label>Редактор текста:</label>-->
+                    <!--<div class="widget-text-editor-area">-->
+                        <!--<div class="btn-group" data-toggle="buttons">-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '700') {%> active <%}%>" title="Полужирный">-->
+                                <!--<input type="checkbox" name="textUrl_bold" <% if (fontWeight === '700') {%> checked <%}%>><i class="fa fa-bold"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (italic) {%> active <%}%>" title="Курсив">-->
+                                <!--<input type="checkbox"  name="textUrl_italic" <% if (italic) {%> checked <%}%>><i class="fa fa-italic"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '300') {%> active <%}%>" title="Тонкий">-->
+                                <!--<input type="checkbox" name="textUrl_tiny" <% if (fontWeight === '300') {%> checked <%}%>><i class="light-icon">L</i>-->
+                            <!--</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Регистр</h5>
+                    <label>
+                        <input name="textUrl_register" <% if (uppercase) {%> checked <%}%> type="checkbox"> Верхний регистр
+                    </label>
+                </div>
+
+                <!-- select -->
+                <div class="col-md-4 form-group">
+                    <label>Шрифт</label>
+                    <select class="form-control" name="textUrl_font">
+                        <option <% if (font === 'arial') {%> selected <%}%> value="arial">Arial</option>
+                        <option <% if (font === 'a_algerius_nr') {%> selected <%}%> value="a_algerius_nr">a_AlgeriusNr</option>
+                        <option <% if (font === 'a_alterna_otl') {%> selected <%}%> value="a_alterna_otl">a_AlternaOtl</option>
+                        <option <% if (font === 'a_alterna') {%> selected <%}%> value="a_alterna">a_Alterna</option>
+                        <option <% if (font === 'a_alterna_sh') {%> selected <%}%> value="a_alterna_sh">a_AlternaSh</option>
+                        <option <% if (font === 'a_alterna_titul_nr_cm') {%> selected <%}%> value="a_alterna_titul_nr_cm">a_Alterna Titul NrCm</option>
+                        <option <% if (font === 'a_antique_titul_gr') {%> selected <%}%> value="a_antique_titul_gr">a_Alterna Titul Gr</option>
+                        <option <% if (font === 'albertus') {%> selected <%}%> value="albertus">Albertus</option>
+                        <option <% if (font === 'allods_west') {%> selected <%}%> value="allods_west">Allods West</option>
+                        <option <% if (font === 'atiba_cyrillic') {%> selected <%}%> value="atiba_cyrillic">Atiba Cyrillic</option>
+                        <option <% if (font === 'courier_new_cyr') {%> selected <%}%> value="courier_new_cyr">Courier New Cyr</option>
+                        <option <% if (font === 'courier10_cyr_bt') {%> selected <%}%> value="courier10_cyr_bt">Courier10 Cyr Bt</option>
+                        <option <% if (font === 'dublon_c_bold') {%> selected <%}%> value="dublon_c_bold">Dublon C</option>
+                        <option <% if (font === 'dutch801_cyril_bt') {%> selected <%}%> value="dutch801_cyril_bt">Dutch801 Cyril Bt</option>
+                        <option <% if (font === 'ft40_roman') {%> selected <%}%> value="ft40_roman">Ft40 Roman</option>
+                        <option <% if (font === 'geometrica_sans') {%> selected <%}%> value="geometrica_sans">Geometrica Sans</option>
+                        <option <% if (font === 'impress_tl') {%> selected <%}%> value="impress_tl">Impress Tl</option>
+                        <option <% if (font === 'infinity') {%> selected <%}%> value="infinity">Infinity</option>
+                        <option <% if (font === 'kb_danube') {%> selected <%}%> value="kb_danube">Kb Danube</option>
+                        <option <% if (font === 'kramola') {%> selected <%}%> value="kramola">Kramola</option>
+                        <option <% if (font === 'leksa_pro') {%> selected <%}%> value="leksa_pro">Leksa Pro</option>
+                        <option <% if (font === 'merriweather') {%> selected <%}%> value="merriweather">Merriweather</option>
+                        <option <% if (font === 'news702_cyril_bt') {%> selected <%}%> value="news702_cyril_bt">News702 Cyril Bt</option>
+                        <option <% if (font === 'open_sans') {%> selected <%}%> value="open_sans">Open Sans</option>
+                        <option <% if (font === 'oz_handicraft_cyrillic_bt') {%> selected <%}%> value="oz_handicraft_cyrillic_bt">Oz Handicraft</option>
+                        <option <% if (font === 'pf_agora_sans_pro') {%> selected <%}%> value="pf_agora_sans_pro">PF Agora Sans Pro</option>
+                        <option <% if (font === 'pf_beau_sans_pro') {%> selected <%}%> value="pf_beau_sans_pro">PF Beau Sans Pro</option>
+                        <option <% if (font === 'pf_bulletin_sans_pro') {%> selected <%}%> value="pf_bulletin_sans_pro">PF Bulletin Sans Pro</option>
+                        <option <% if (font === 'pf_davinci_script_pro') {%> selected <%}%> value="pf_davinci_script_pro">PF Davinci Script Pro</option>
+                        <option <% if (font === 'pf_din_text_cond_pro') {%> selected <%}%> value="pf_din_text_cond_pro">PF Din Text Cound Pro</option>
+                        <option <% if (font === 'pf_hellenica_serif_pro') {%> selected <%}%> value="pf_hellenica_serif_pro">PF Hellenica Serif Pro</option>
+                        <option <% if (font === 'pf_kids_pro_grade') {%> selected <%}%> value="pf_kids_pro_grade">PF Kids Pro Grade</option>
+                        <option <% if (font === 'pf_monumenta_pro_metallica') {%> selected <%}%> value="pf_monumenta_pro_metallica">PF Monumenta Pro Metallica</option>
+                        <option <% if (font === 'pf_monumenta_pro') {%> selected <%}%> value="pf_monumenta_pro">PF Monumenta Pro</option>
+                        <option <% if (font === 'pf_wonderland_pro') {%> selected <%}%> value="pf_wonderland_pro">PF Wonderland Pro</option>
+                        <option <% if (font === 'play') {%> selected <%}%> value="play">Play</option>
+                        <option <% if (font === 'poster_bodoni_cyrillic_bt') {%> selected <%}%> value="poster_bodoni_cyrillic_bt">Poster Bodoni</option>
+                        <option <% if (font === 'pt_sans_caption') {%> selected <%}%> value="pt_sans_caption">PT Sans Caption</option>
+                        <option <% if (font === 'roboto') {%> selected <%}%> value="roboto">Roboto</option>
+                        <option <% if (font === 'times_new_roman_cyr') {%> selected <%}%> value="times_new_roman_cyr">Times New Roman</option>
+                        <option <% if (font === 'trebuchet_ms') {%> selected <%}%> value="trebuchet_ms">Trebuchet Ms</option>
+                        <option <% if (font === 'ubuntu') {%> selected <%}%> value="ubuntu">Ubuntu</option>
+                        <option <% if (font === 'wonderland') {%> selected <%}%> value="wonderland">Wonderland</option>
+                        <option <% if (font === 'aa_futured') {%> selected <%}%> value="aa_futured">AA Futured</option>
+                        <option <% if (font === 'century_gothic') {%> selected <%}%> value="century_gothic">Century Gothic</option>
+                        <option <% if (font === 'malgun_gothic_bol') {%> selected <%}%> value="malgun_gothic_bol">Malgun Gothic Bold</option>
+                        <option <% if (font === 'malgun_gothic') {%> selected <%}%> value="malgun_gothic">Malgun Gothic</option>
+                        <option <% if (font === 'adLib') {%> selected <%}%> value="adLib">Ad Lib</option>
+                        <option <% if (font === 'bsfmoj_shrifteg') {%> selected <%}%> value="bsfmoj_shrifteg">Bsfmoj Shrifteg</option>
+                        <option <% if (font === 'crushez') {%> selected <%}%> value="crushez">Crushez</option>
+                        <option <% if (font === 'ds_zombie') {%> selected <%}%> value="ds_zombie">DS Zombie</option>
+                        <option <% if (font === 'flashNiK') {%> selected <%}%> value="flashNiK">Flash NiK</option>
+                        <option <% if (font === 'font_1') {%> selected <%}%> value="font_1">Font 1</option>
+                        <option <% if (font === 'font_2') {%> selected <%}%> value="font_2">Font 2</option>
+                        <option <% if (font === 'neSkid') {%> selected <%}%> value="neSkid">Ne Skid</option>
+                        <option <% if (font === 'obelixPro') {%> selected <%}%> value="obelixPro">Obelix Pro</option>
+                        <option <% if (font === 'tf2Build') {%> selected <%}%> value="tf2Build">Tf2Build</option>
+                        <option <% if (font === 'thwack') {%> selected <%}%> value="thwack">Thwack</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Цвет шрифта</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="textUrl_color" value="<%= color %>">
+                        <span class="input-group-addon"><div class="icon color" id="textUrl_color_p_1" style="background-color: <%= color %>"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.tab-content -->
+</div>

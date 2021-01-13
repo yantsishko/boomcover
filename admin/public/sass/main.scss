@@ -1,0 +1,19 @@
+table {
+    .date {
+        width: 200px;
+        text-align: center;
+    }
+    .level {
+        width: 80px;
+        text-align: center;
+    }
+    .message {
+        width: calc(100% - 280px);
+        text-align: left;
+    }
+    thead {
+        tr {
+            text-align: center;
+        }
+    }
+}

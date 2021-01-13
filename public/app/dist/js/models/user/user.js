@@ -1,0 +1,1 @@
+define(["backbone"],function(e){return e.Model.extend({urlRoot:"/user",defaults:{id:null,name:null}})});

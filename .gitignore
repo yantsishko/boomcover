@@ -1,0 +1,12 @@
+bower_components
+node_modules
+.DS_STORE
+.idea
+protected/uploads
+yarn-error.log
+npm-error.log
+coverage
+.env
+.env.local
+.nyc_output
+.vscode

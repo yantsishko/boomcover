@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  h1 Logs for #{name}
+  table.table.table-responsive
+    thead
+      tr
+        th.date(scope="col" style="width: 200px") Date Time
+        th.level(scope="col" style="width: 80px") Level
+        th.message(scope="col") Messge
+    tbody 
+      each log, index in logData
+        tr(class=log.level.class)
+          td.date= log.startTime
+          td.level= log.level.levelStr
+          td.message !{log.data.join("")}

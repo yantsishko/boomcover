@@ -1,0 +1,221 @@
+define([
+  'app',
+  'marionette',
+  'backbone',
+  'underscore',
+  'text!templates/widgets/winner/index.ejs',
+  'bootstrapcolorpicker',
+], function (App, Marionette, Backbone, _, winnerTmpl, bootstrapcolorpicker) {
+
+  'use strict';
+
+  return Marionette.ItemView.extend({
+    template: _.template(winnerTmpl),
+    ui: {
+      winner1: 'select[name=winner_form_1]',
+      position: 'select[name=winner_namePosition]',
+    },
+    events: {
+      'change select[name=winner_form_1]': 'changeForm',
+      'change select[name=winner_namePosition]': 'changeNamePosition',
+      'change select[name=winners_name_font_1]': 'changeNameFont',
+      'change select[name=winners_lname_font_1]': 'changeLNameFont',
+      'change input[name=winners_name_show_1]': 'toggleName',
+      'change input[name=winners_name_register_1]': 'toggleNameRegister',
+      'change input[name=winners_lname_show_1]': 'toggleLName',
+      'change input[name=winners_lname_register_1]': 'toggleLNameRegister',
+      'change input[name=winners_name_bold_1]': 'nameFontBold',
+      'change input[name=winners_lname_bold_1]': 'lNameFontBold',
+      'change input[name=winners_name_italic_1]': 'nameFontItalic',
+      'change input[name=winners_lname_italic_1]': 'lNameFontItalic',
+      'change input[name=winners_name_tiny_1]': 'nameFontTiny',
+      'change input[name=winners_lname_tiny_1]': 'lNameFontTiny',
+      'change input[name=winner_id]': 'changeId'
+    },
+    initialize: function (options) {
+      //console.log(this.model);
+    },
+    onRender: function () {
+      this.setSliders();
+
+      var self = this;
+      this.$el.find('#winners_name_color_1').colorpicker()
+        .on('changeColor', function () {
+          self.$el.find('#winners_name_color_p_1').css("background", self.$el.find(this).colorpicker('getValue', '#ffffff'));
+          self.model.set('nameColor', self.$el.find(this).colorpicker('getValue', '#ffffff'));
+        });
+      this.$el.find('#winners_lname_color_1').colorpicker()
+        .on('changeColor', function () {
+          self.$el.find('#winners_lname_color_p_1').css("background", self.$el.find(this).colorpicker('getValue', '#ffffff'));
+          self.model.set('lnameColor', self.$el.find(this).colorpicker('getValue', '#ffffff'));
+        });
+
+      this.$el.find('#winners_image_border_color').colorpicker()
+        .on('changeColor', function () {
+          self.$el.find('#winners_image_border_color_p').css("background", self.$el.find(this).colorpicker('getValue', '#ffffff'));
+          self.model.set('borderColor', self.$el.find(this).colorpicker('getValue', '#ffffff'));
+        });
+
+    },
+    changeForm: function () {
+      this.model.set('imageFigure', this.ui.winner1.val());
+    },
+    changeNamePosition: function () {
+      this.model.set('namePosition', this.ui.position.val());
+    },
+    changeId: function (e) {
+      this.model.set('winnerId', e.target.value);
+    },
+    toggleName: function (e) {
+      if (e.target.checked) {
+        this.model.set('nameShow', false);
+      } else {
+        this.model.set('nameShow', true);
+      }
+    },
+    toggleNameRegister: function (e) {
+      if (e.target.checked) {
+        this.model.set('nameUppercase', true);
+      } else {
+        this.model.set('nameUppercase', false);
+      }
+    },
+    toggleLName: function (e) {
+      if (e.target.checked) {
+        this.model.set('lnameShow', false);
+      } else {
+        this.model.set('lnameShow', true);
+      }
+    },
+    toggleLNameRegister: function (e) {
+      if (e.target.checked) {
+        this.model.set('lnameUppercase', true);
+      } else {
+        this.model.set('lnameUppercase', false);
+      }
+    },
+    changeNameFont: function (e) {
+      var font = this.$el.find('[name=winners_name_font_1]').val();
+      Backbone.$('#winner_fname_1').css('font-family', font);
+      this.model.set('nameFont', font);
+    },
+    changeLNameFont: function (e) {
+      var font = this.$el.find('[name=winners_lname_font_1]').val();
+      Backbone.$('#winner_lname_1').css('font-family', font);
+      this.model.set('lnameFont', font);
+    },
+    nameFontBold: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_fname_1').css('font-weight', '700');
+        this.$el.find('[name=winners_name_tiny_1]').prop('checked', false);
+        this.$el.find('[name=winners_name_tiny_1]').parent().removeClass('active');
+        this.model.set('nameFontWeight', '700');
+      } else {
+        Backbone.$('#winner_fname_1').css('font-weight', 'initial');
+        this.model.set('nameFontWeight', 'none');
+      }
+    },
+    nameFontItalic: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_fname_1').css('font-style', 'italic');
+        this.model.set('nameItalic', true);
+      } else {
+        Backbone.$('#winner_fname_1').css('font-style', 'normal');
+        this.model.set('nameItalic', false);
+      }
+    },
+    nameFontTiny: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_fname_1').css('font-weight', '300');
+        this.$el.find('[name=winners_name_bold_1]').prop('checked', false);
+        this.$el.find('[name=winners_name_bold_1]').parent().removeClass('active');
+        this.model.set('nameFontWeight', '300');
+      } else {
+        Backbone.$('#winner_fname_1').css('font-weight', 'initial');
+        this.model.set('nameFontWeight', 'none');
+      }
+    },
+    lNameFontBold: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_lname_1').css('font-weight', '700');
+        this.$el.find('[name=winners_lname_tiny_1]').prop('checked', false);
+        this.$el.find('[name=winners_lname_tiny_1]').parent().removeClass('active');
+        this.model.set('lnameFontWeight', '700');
+      } else {
+        Backbone.$('#winner_lname_1').css('font-weight', 'initial');
+        this.model.set('lnameFontWeight', 'none');
+      }
+    },
+    lNameFontItalic: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_lname_1').css('font-style', 'italic');
+        this.model.set('lnameItalic', true);
+      } else {
+        Backbone.$('#winner_lname_1').css('font-style', 'normal');
+        this.model.set('lnameItalic', false);
+      }
+    },
+    lNameFontTiny: function (e) {
+      if (e.target.checked) {
+        Backbone.$('#winner_lname_1').css('font-weight', '300');
+        this.$el.find('[name=winners_lname_bold_1]').prop('checked', false);
+        this.$el.find('[name=winners_lname_bold_1]').parent().removeClass('active');
+        this.model.set('lnameFontWeight', '300');
+      } else {
+        Backbone.$('#winner_lname_1').css('font-weight', 'initial');
+        this.model.set('lnameFontWeight', 'none');
+      }
+    },
+    setSliders: function () {
+      var self = this;
+
+      this.$el.find('#winners_image_size_1').ionRangeSlider({
+        type: 'single',
+        min: 50,
+        max: 150,
+        from: self.model.get('imageSize'),
+        step: 1,
+        postfix: ' px',
+        onChange: function (obj) {
+          self.model.set('imageSize', obj.from);
+        }
+      });
+
+      this.$el.find('#winners_text_size_fname_1').ionRangeSlider({
+        type: 'single',
+        min: 14,
+        max: 80,
+        from: self.model.get('nameSize'),
+        step: 1,
+        postfix: ' px',
+        onChange: function (obj) {
+          self.model.set('nameSize', obj.from);
+        }
+      });
+
+      this.$el.find('#winners_text_size_lname_1').ionRangeSlider({
+        type: 'single',
+        min: 14,
+        max: 80,
+        from: self.model.get('lnameSize'),
+        step: 1,
+        postfix: ' px',
+        onChange: function (obj) {
+          self.model.set('lnameSize', obj.from);
+        }
+      });
+
+      this.$el.find('#winners_image_border').ionRangeSlider({
+        type: "single",
+        min: 0,
+        max: 20,
+        from: self.model.get('borderSize'),
+        step: 1,
+        postfix: " px",
+        onChange: function (obj) {
+          self.model.set('borderSize', obj.from);
+        }
+      });
+    }
+  });
+});

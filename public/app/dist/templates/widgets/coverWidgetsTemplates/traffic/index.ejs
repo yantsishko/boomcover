@@ -1,0 +1,32 @@
+<% if (isShown) { %>
+    <div id="traffic_<%= id %>"  title="<%= title %>" class="weather-widget draggable ui-widget-content" style="
+        left: <%= iconX %>px;
+        top: <%= iconY %>px;
+        <% if (!iconHide) { %>
+            background: url('/imgs/traffic_widget/<%= iconSize %>/green.png');
+        <% } %>
+        width: <%= iconSize %>px;
+        height: <%= iconSize %>px;
+    " data-action="show-settings">
+        <div id="traffic_type_<%= id %>" class="weather-type draggable ui-widget-content" style="
+                left: <%= absoluteTextX %>px;
+                top: <%= absoluteTextY %>px;
+                font-size: <%= size %>px;
+                <% if (uppercase) { %>text-transform: uppercase; <% } %>
+                font-family: <%= font %>;
+                color: <%= color %>;
+                white-space: nowrap;
+                "><% if (!textHide) { %>Дороги почти свободны<% } %></div>
+
+        <div id="traffic_wind_<%= id %>" class="weather-wind draggable ui-widget-content" style="
+                left: <%= absoluteMarkX %>px;
+                top: <%= absoluteMarkY %>px;
+                white-space: nowrap;
+                font-size: <%= counterSize %>px;
+                <% if (counterUppercase) { %>text-transform: uppercase; <% } %>
+                font-family: <%= counterFont %>;
+                color: <%= counterColor %>;
+                "> <% if (!markHide) { %><p>2 <% if (!markHideCounter) { %>балла <% } %></p> <% } %></div>
+
+    </div>
+<% } %>

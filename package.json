@@ -1,0 +1,129 @@
+{
+  "name": "boomcover",
+  "version": "3.11.0",
+  "private": true,
+  "description": "Service for dynamic covers",
+  "scripts": {
+    "start": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./bin/www.ts",
+    "convert": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./protected/workers/convert.ts --env development",
+    "create_comments": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./protected/workers/create_comments.ts --env development",
+    "create_reposts": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./protected/workers/create_reposts.ts --env development",
+    "update_comments": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./protected/workers/update_comments.ts --env development",
+    "update_cache": "env $(cat .env.local | xargs) ./node_modules/.bin/ts-node ./protected/workers/update_cache.ts --env development",
+    "cron": "./node_modules/.bin/ts-node ./cron.ts --env development",
+    "test": "env $(cat .env.local | xargs) TEST=true mocha",
+    "test-debug": "env $(cat .env.local | xargs) TEST=true mocha --inspect-brk",
+    "coverage": "env $(cat .env.local | xargs) TEST=true nyc mocha",
+    "lint": "tslint -c tslint.json './protected/**/*.ts' './admin/**/*.ts' './*.ts' -e './protected/@types/**/*.d.ts' --force --outputAbsolutePaths"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "protected/**/*.ts"
+    ],
+    "exclude": [
+      "protected/@types",
+      "protected/runtime",
+      "protected/migrations",
+      "protected/uploads",
+      "protected/views"
+    ],
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "engines": {
+    "node": "~8.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yantsishkodev@bitbucket.org/yantsishkodev/boomcover.git"
+  },
+  "authors": [
+    "Yan Tsishko",
+    "Ilya Amelevich <ilya.amelevich@ya.ru>"
+  ],
+  "homepage": "https://bitbucket.org/yantsishkodev/boomcover#readme",
+  "dependencies": {
+    "@types/amqplib": "^0.5.5",
+    "@types/chai-datetime": "^0.0.31",
+    "@types/cli": "^0.11.19",
+    "@types/cookie-session": "^2.0.34",
+    "@types/cron": "^1.2.1",
+    "@types/crypto-js": "^3.1.37",
+    "@types/express": "^4.0.39",
+    "@types/graceful-fs": "^4.1.2",
+    "@types/lodash": "^4.14.85",
+    "@types/mime": "^2.0.0",
+    "@types/moment": "^2.13.0",
+    "@types/multer": "^1.3.6",
+    "@types/node": "^8.0.53",
+    "@types/node-fetch": "^1.6.7",
+    "@types/request-promise": "^4.1.39",
+    "@types/supertest": "^2.0.4",
+    "@types/valid-url": "^1.0.2",
+    "@types/xml2js": "^0.4.2",
+    "amqplib": "^0.5.2",
+    "body-parser": "^1.18.2",
+    "canvas": "1.6.7",
+    "chai-datetime": "^1.5.0",
+    "cli": "^1.0.1",
+    "cookie-session": "^1.3.1",
+    "cron": "^1.3.0",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "googleapis": "^23.0.0",
+    "graceful-fs": "^4.1.11",
+    "log4js": "^2.4.1",
+    "mime": "^2.0.3",
+    "moment": "^2.19.4",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0",
+    "node-fetch": "^1.7.3",
+    "node-uuid": "^1.4.8",
+    "optimist": "^0.6.1",
+    "password-hash": "^1.2.2",
+    "pug": "^2.0.0-rc.4",
+    "rand-token": "^0.4.0",
+    "reflect-metadata": "^0.1.10",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "requirejs": "^2.3.5",
+    "rss-parser": "^2.11.0",
+    "serve-favicon": "^2.4.5",
+    "supertest": "^3.0.0",
+    "system-sleep": "^1.3.6",
+    "ts-node": "^4.0.1",
+    "tsconfig-paths": "^2.6.0",
+    "typeorm": "^0.1.9",
+    "typescript": "^2.6.1",
+    "valid-url": "^1.0.9",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-requirejs": "^1.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglifycss": "^1.0.6",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "source-map-support": "^0.5.0",
+    "tslint": "^5.8.0"
+  }
+}

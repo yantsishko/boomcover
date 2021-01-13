@@ -1,0 +1,12 @@
+<% if (isShown) { %>
+    <div id="image_<%= id %>"  title="<%= title %>" class="text-widget draggable ui-widget-content" style="
+        left: <%= imageX %>px;
+        top: <%= imageY %>px;
+    " data-action="show-settings">
+        <% if (file_url !== '') { %>
+            <img src="<%= file_url %>" height="<%= size %>">
+        <% } else if (predifined_file !== '') { %>
+            <img src="/imgs/stickers/<%= predifined_file %>.png" height="<%= size %>">
+        <% } %>
+    </div>
+<% } %>

@@ -1,0 +1,1 @@
+define(["app","marionette","js/routers/index","js/pages/navController"],function(t,e,n,r){return t.module("Pages",function(){this.startWithParent=!1,this.addInitializer(function(){this.router=new n({controller:new r})})})});

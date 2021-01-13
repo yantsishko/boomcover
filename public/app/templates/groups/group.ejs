@@ -1,0 +1,53 @@
+<div class="col-md-4">
+    <div class="box box-widget widget-user widget_group" style="<% if (!connected) { %>opacity: 0.5<% } %>; margin-bottom: 0px;">
+        <% if (connected) { %>
+            <span class="onOff_activeGroup">
+                <div class="form-group">
+                  <div class="checkbox ">
+                        <input type="checkbox" id="box-<%= id %>" data-action="unconnect-group" <% if (!connected) { %>checked<% } %>>
+                        <label class="fa fa-power-off" for="box-<%= id %>" title="Выключить обложку"></label>
+                  </div>
+                </div>
+            </span>
+        <% } %>
+        <div class="widget-user-header bg-aqua-active">
+
+            <h3 class="widget-user-username"><%= title %></h3>
+        </div>
+        <div class="widget-user-image">
+            <img class="img-circle" src="<%= img %>" alt="Avator Group Image">
+        </div>
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-sm-6 border-right">
+                    <div class="description-block">
+                        <h5 class="description-header"><%= members %></h5>
+                        <span class="description-text">Количество участников</span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="description-block">
+                        <h5 class="description-header"><%= updates %></h5>
+                        <span class="description-text">Количество обновлений</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-group-box" style="margin-bottom: 20px;">
+
+        <% if (connected) { %>
+        <a href="/constructor/<%= id %>">
+            <% } %>
+            <button type="button" class="btn btn-block btn-primary btn-lg">
+                <% if (connected) { %>
+                Редактировать
+                <% }else{ %>
+                Подключить
+                <% } %>
+            </button>
+            <% if (connected) { %>
+        </a>
+        <% } %>
+    </div>
+</div>

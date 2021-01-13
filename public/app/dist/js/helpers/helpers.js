@@ -1,0 +1,1 @@
+define(["app","backbone"],function(n,r){var o=null;return{getData:function(n){return r.$.ajax({async:!1,url:n,success:function(n){o=n},error:function(n){o="error",401==n.status&&(window.location="/login")}}),o}}});

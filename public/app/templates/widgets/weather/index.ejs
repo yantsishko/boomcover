@@ -1,0 +1,188 @@
+<div class="box-header with-border">
+    <h3 class="box-title"><i class="fa fa-cog pull-left"></i>Настройка виджета - Погода</h3>
+</div>
+<!-- Custom Tabs -->
+<div class="col-md-12 nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Виджет</a></li>
+        <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки текста</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="col-md-12 tab-pane active" id="tab_1">
+            <div class="col-md-12 box-body">
+                <div class="col-md-6 form-group">
+                    <label>Город</label>
+                    <input  class="form-control" type="text" name="weather_city" placeholder="Введите город" value="<%= city %>">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть ветер</h5>
+                        <label>
+                            <input name="weather_wind_show" <% if (!showWind) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть тип</h5>
+                        <label>
+                            <input name="weather_type_show" <% if (!showType) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 box-body">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Текст после температуры</label>
+                        <input class="form-control" type="text" name="weather_text_after" value="<%= textAfter %>" placeholder="°C">
+                    </div>
+                    <div class="form-group">
+                        <label>Показывать погоду на:</label>
+                        <select class="form-control" name="weather_time">
+                            <option <% if (weatherTime === 'today') {%> selected <%}%> value="today">Сегодня</option>
+                            <option <% if (weatherTime === 'tomorrow') {%> selected <%}%> value="tomorrow">Завтра</option>
+                            <option <% if (weatherTime === 'afterTomorrow') {%> selected <%}%> value="afterTomorrow">Послезавтра</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Шаблон иконки погоды</label>
+                        <select class="form-control" name="weather_template">
+                            <!--<option value="bubble">Bubble</option>-->
+                            <option <% if (weatherTemplate === 'plain') {%> selected <%}%> value="plain">Plain</option>
+                            <option <% if (weatherTemplate === 'silq') {%> selected <%}%> value="silq">Silq</option>
+                            <option <% if (weatherTemplate === 'sketchy') {%> selected <%}%> value="sketchy">Sketchy</option>
+                            <option <% if (weatherTemplate === 'vclouds') {%> selected <%}%> value="vclouds">Vclouds</option>
+                            <option <% if (weatherTemplate === 'touch') {%> selected <%}%> value="touch" selected>Touch</option>
+                            <!--<option value="weezly">Weezly</option>-->
+                        </select>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="form-group templatesIcons">
+                            <ul class="iconTouch" id="weather_icons">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_2">
+            <div class="col-md-12 box-body">
+                <div class="col-md-5 ">
+                    <label>Размер текста</label>
+                    <div class="row margin">
+                        <div class="col-sm-12">
+                            <input id="weather_text_size" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="col-md-4 widget-text-editor text-center">-->
+                    <!--<label>Редактор текста:</label>-->
+                    <!--<div class="widget-text-editor-area">-->
+                        <!--<div class="btn-group" data-toggle="buttons">-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '700') {%> active <%}%>" title="Полужирный">-->
+                                <!--<input type="checkbox" name="weather_text_bold" <% if (fontWeight === '700') {%> checked <%}%>><i class="fa fa-bold"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (italic) {%> active <%}%>" title="Курсив">-->
+                                <!--<input type="checkbox"  name="weather_text_italic" <% if (italic) {%> checked <%}%>><i class="fa fa-italic"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '300') {%> active <%}%>" title="Тонкий">-->
+                                <!--<input type="checkbox" name="weather_text_tiny" <% if (fontWeight === '300') {%> checked <%}%>><i class="light-icon">L</i>-->
+                            <!--</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="col-md-3 checkbox visible-checkbox">
+                    <h5>Регистр</h5>
+                    <label>
+                        <input name="weather_text_register" <% if (uppercase) {%> checked <%}%> type="checkbox">  Верхний регистр
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+
+                <!-- select -->
+                <div class="col-md-5 form-group">
+                    <label>Шрифт</label>
+                    <select class="form-control"  name="weather_text_font">
+                        <option <% if (font === 'arial') {%> selected <%}%> value="arial">Arial</option>
+                        <option <% if (font === 'a_algerius_nr') {%> selected <%}%> value="a_algerius_nr">a_AlgeriusNr</option>
+                        <option <% if (font === 'a_alterna_otl') {%> selected <%}%> value="a_alterna_otl">a_AlternaOtl</option>
+                        <option <% if (font === 'a_alterna') {%> selected <%}%> value="a_alterna">a_Alterna</option>
+                        <option <% if (font === 'a_alterna_sh') {%> selected <%}%> value="a_alterna_sh">a_AlternaSh</option>
+                        <option <% if (font === 'a_alterna_titul_nr_cm') {%> selected <%}%> value="a_alterna_titul_nr_cm">a_Alterna Titul NrCm</option>
+                        <option <% if (font === 'a_antique_titul_gr') {%> selected <%}%> value="a_antique_titul_gr">a_Alterna Titul Gr</option>
+                        <option <% if (font === 'albertus') {%> selected <%}%> value="albertus">Albertus</option>
+                        <option <% if (font === 'allods_west') {%> selected <%}%> value="allods_west">Allods West</option>
+                        <option <% if (font === 'atiba_cyrillic') {%> selected <%}%> value="atiba_cyrillic">Atiba Cyrillic</option>
+                        <option <% if (font === 'courier_new_cyr') {%> selected <%}%> value="courier_new_cyr">Courier New Cyr</option>
+                        <option <% if (font === 'courier10_cyr_bt') {%> selected <%}%> value="courier10_cyr_bt">Courier10 Cyr Bt</option>
+                        <option <% if (font === 'dublon_c_bold') {%> selected <%}%> value="dublon_c_bold">Dublon C</option>
+                        <option <% if (font === 'dutch801_cyril_bt') {%> selected <%}%> value="dutch801_cyril_bt">Dutch801 Cyril Bt</option>
+                        <option <% if (font === 'ft40_roman') {%> selected <%}%> value="ft40_roman">Ft40 Roman</option>
+                        <option <% if (font === 'geometrica_sans') {%> selected <%}%> value="geometrica_sans">Geometrica Sans</option>
+                        <option <% if (font === 'impress_tl') {%> selected <%}%> value="impress_tl">Impress Tl</option>
+                        <option <% if (font === 'infinity') {%> selected <%}%> value="infinity">Infinity</option>
+                        <option <% if (font === 'kb_danube') {%> selected <%}%> value="kb_danube">Kb Danube</option>
+                        <option <% if (font === 'kramola') {%> selected <%}%> value="kramola">Kramola</option>
+                        <option <% if (font === 'leksa_pro') {%> selected <%}%> value="leksa_pro">Leksa Pro</option>
+                        <option <% if (font === 'merriweather') {%> selected <%}%> value="merriweather">Merriweather</option>
+                        <option <% if (font === 'news702_cyril_bt') {%> selected <%}%> value="news702_cyril_bt">News702 Cyril Bt</option>
+                        <option <% if (font === 'open_sans') {%> selected <%}%> value="open_sans">Open Sans</option>
+                        <option <% if (font === 'oz_handicraft_cyrillic_bt') {%> selected <%}%> value="oz_handicraft_cyrillic_bt">Oz Handicraft</option>
+                        <option <% if (font === 'pf_agora_sans_pro') {%> selected <%}%> value="pf_agora_sans_pro">PF Agora Sans Pro</option>
+                        <option <% if (font === 'pf_beau_sans_pro') {%> selected <%}%> value="pf_beau_sans_pro">PF Beau Sans Pro</option>
+                        <option <% if (font === 'pf_bulletin_sans_pro') {%> selected <%}%> value="pf_bulletin_sans_pro">PF Bulletin Sans Pro</option>
+                        <option <% if (font === 'pf_davinci_script_pro') {%> selected <%}%> value="pf_davinci_script_pro">PF Davinci Script Pro</option>
+                        <option <% if (font === 'pf_din_text_cond_pro') {%> selected <%}%> value="pf_din_text_cond_pro">PF Din Text Cound Pro</option>
+                        <option <% if (font === 'pf_hellenica_serif_pro') {%> selected <%}%> value="pf_hellenica_serif_pro">PF Hellenica Serif Pro</option>
+                        <option <% if (font === 'pf_kids_pro_grade') {%> selected <%}%> value="pf_kids_pro_grade">PF Kids Pro Grade</option>
+                        <option <% if (font === 'pf_monumenta_pro_metallica') {%> selected <%}%> value="pf_monumenta_pro_metallica">PF Monumenta Pro Metallica</option>
+                        <option <% if (font === 'pf_monumenta_pro') {%> selected <%}%> value="pf_monumenta_pro">PF Monumenta Pro</option>
+                        <option <% if (font === 'pf_wonderland_pro') {%> selected <%}%> value="pf_wonderland_pro">PF Wonderland Pro</option>
+                        <option <% if (font === 'play') {%> selected <%}%> value="play">Play</option>
+                        <option <% if (font === 'poster_bodoni_cyrillic_bt') {%> selected <%}%> value="poster_bodoni_cyrillic_bt">Poster Bodoni</option>
+                        <option <% if (font === 'pt_sans_caption') {%> selected <%}%> value="pt_sans_caption">PT Sans Caption</option>
+                        <option <% if (font === 'roboto') {%> selected <%}%> value="roboto">Roboto</option>
+                        <option <% if (font === 'times_new_roman_cyr') {%> selected <%}%> value="times_new_roman_cyr">Times New Roman</option>
+                        <option <% if (font === 'trebuchet_ms') {%> selected <%}%> value="trebuchet_ms">Trebuchet Ms</option>
+                        <option <% if (font === 'ubuntu') {%> selected <%}%> value="ubuntu">Ubuntu</option>
+                        <option <% if (font === 'wonderland') {%> selected <%}%> value="wonderland">Wonderland</option>
+                        <option <% if (font === 'aa_futured') {%> selected <%}%> value="aa_futured">AA Futured</option>
+                        <option <% if (font === 'century_gothic') {%> selected <%}%> value="century_gothic">Century Gothic</option>
+                        <option <% if (font === 'malgun_gothic_bol') {%> selected <%}%> value="malgun_gothic_bol">Malgun Gothic Bold</option>
+                        <option <% if (font === 'malgun_gothic') {%> selected <%}%> value="malgun_gothic">Malgun Gothic</option>
+                        <option <% if (font === 'adLib') {%> selected <%}%> value="adLib">Ad Lib</option>
+                        <option <% if (font === 'bsfmoj_shrifteg') {%> selected <%}%> value="bsfmoj_shrifteg">Bsfmoj Shrifteg</option>
+                        <option <% if (font === 'crushez') {%> selected <%}%> value="crushez">Crushez</option>
+                        <option <% if (font === 'ds_zombie') {%> selected <%}%> value="ds_zombie">DS Zombie</option>
+                        <option <% if (font === 'flashNiK') {%> selected <%}%> value="flashNiK">Flash NiK</option>
+                        <option <% if (font === 'font_1') {%> selected <%}%> value="font_1">Font 1</option>
+                        <option <% if (font === 'font_2') {%> selected <%}%> value="font_2">Font 2</option>
+                        <option <% if (font === 'neSkid') {%> selected <%}%> value="neSkid">Ne Skid</option>
+                        <option <% if (font === 'obelixPro') {%> selected <%}%> value="obelixPro">Obelix Pro</option>
+                        <option <% if (font === 'tf2Build') {%> selected <%}%> value="tf2Build">Tf2Build</option>
+                        <option <% if (font === 'thwack') {%> selected <%}%> value="thwack">Thwack</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Цвет шрифта</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="weather_text_color" value="<%= color %>">
+                        <span class="input-group-addon"><div class="icon color" id="weather_text_color_p_1" style="background-color: <%= color %>"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.tab-content -->
+</div>

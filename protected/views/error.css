@@ -1,0 +1,17 @@
+body {
+    background-color: #ecf0f5
+}
+
+.error-block {
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin: 40vh auto;
+    height: 20vh;
+    width: 50%;
+    text-align: center
+}
+
+.error-block h1 {
+    color: #333;
+}

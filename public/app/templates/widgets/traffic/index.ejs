@@ -1,0 +1,379 @@
+<div class="box-header with-border">
+    <h3 class="box-title"><i class="fa fa-cog pull-left"></i>Настройка виджета - Пробки</h3>
+</div>
+<!-- Custom Tabs -->
+<div class="col-md-12 nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Виджет</a></li>
+        <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки текста описания</a></li>
+        <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки текста баллов</a></li>
+        <li><a href="#tab_4" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Шаблоны описаний</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="col-md-12 tab-pane active" id="tab_1">
+            <div class="col-md-12 box-body">
+                <div class="col-md-6 form-group">
+                    <label>Город</label>
+                    <select class="form-control selectpicker" data-live-search="true" name="region">
+                        <option value="2" <% if (region == '2') { %>selected<% } %>>Санкт-Петербург</option>
+                        <option value="213" <% if (region == '213') { %>selected<% }%>>Москва</option>
+                        <option value="66" <% if (region == '66') { %>selected<% }%>>Омск</option>
+                        <option value="157" <% if (region == '157') { %>selected<% }%>>Минск</option>
+                        <option value="35" <% if (region == '35') { %>selected<% }%>>Краснодар</option>
+                        <option value="38" <% if (region == '38') { %>selected<% }%>>Волгоград</option>
+                        <option value="39" <% if (region == '39') { %>selected<% }%>>Ростов-на-Дону</option>
+                        <option value="43" <% if (region == '43') { %>selected<% }%>>Казань</option>
+                        <option value="44" <% if (region == '44') { %>selected<% }%>>Ижевск</option>
+                        <option value="45" <% if (region == '45') { %>selected<% }%>>Чебоксары</option>
+                        <option value="47" <% if (region == '47') { %>selected<% }%>>Нижний Новгород</option>
+                        <option value="50" <% if (region == '50') { %>selected<% }%>>Пермь</option>
+                        <option value="51" <% if (region == '51') { %>selected<% }%>>Самара</option>
+                        <option value="54" <% if (region == '54') { %>selected<% }%>>Екатеринбург</option>
+                        <option value="55" <% if (region == '55') { %>selected<% }%>>Тюмень</option>
+                        <option value="56" <% if (region == '56') { %>selected<% }%>>Челябинск</option>
+                        <option value="62" <% if (region == '62') { %>selected<% }%>>Красноярск</option>
+                        <option value="63" <% if (region == '63') { %>selected<% }%>>Иркутск</option>
+                        <option value="64" <% if (region == '64') { %>selected<% }%>>Кемерово</option>
+                        <option value="65" <% if (region == '65') { %>selected<% }%>>Новосибирск</option>
+                        <option value="67" <% if (region == '67') { %>selected<% }%>>Томск</option>
+                        <option value="74" <% if (region == '74') { %>selected<% }%>>Якутск</option>
+                        <option value="75" <% if (region == '75') { %>selected<% }%>>Владивосток</option>
+                        <option value="76" <% if (region == '76') { %>selected<% }%>>Хабаровск</option>
+                        <option value="143" <% if (region == '143') { %>selected<% }%>>Киев</option>
+                        <option value="144" <% if (region == '144') { %>selected<% }%>>Львов</option>
+                        <option value="145" <% if (region == '145') { %>selected<% }%>>Одесса</option>
+                        <option value="147" <% if (region == '147') { %>selected<% }%>>Харьков</option>
+                        <option value="172"> <% if (region == '172') { %>selected<% }%>Уфа</option>
+                        <option value="193" <% if (region == '193') { %>selected<% }%>>Воронеж</option>
+                        <option value="194" <% if (region == '194') { %>selected<% }%>>Саратов</option>
+                        <option value="197" <% if (region == '197') { %>selected<% }%>>Барнаул</option>
+                        <option value="237" <% if (region == '237') { %>selected<% }%>>Новокузнецк</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть иконку</h5>
+                        <label>
+                            <input name="icon_show" <% if (iconHide) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть описание</h5>
+                        <label>
+                            <input name="text_show" <% if (textHide) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 box-body">
+                <div class="col-md-6">
+                    <label>Размер иконки светофора</label>
+                    <select class="form-control" data-live-search="true" name="icon_size">
+                        <option value="20" <% if (iconSize == '20') { %>selected<% } %>>Маленькая</option>
+                        <option value="40" <% if (iconSize == '40') { %>selected<% }%>>Большая</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть баллы</h5>
+                        <label>
+                            <input name="mark_show" <% if (markHide) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                    <div class="col-md-6 checkbox visible-checkbox">
+                        <h5>Скрыть текст баллов</h5>
+                        <label>
+                            <input name="mark_counter_show" <% if (markHideCounter) {%> checked <%}%> type="checkbox"> Скрыть
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_2">
+            <div class="col-md-12 box-body">
+                <div class="col-md-5 ">
+                    <label>Размер текста</label>
+                    <div class="row margin">
+                        <div class="col-sm-12">
+                            <input id="text_size" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="col-md-4 widget-text-editor text-center">-->
+                    <!--<label>Редактор текста:</label>-->
+                    <!--<div class="widget-text-editor-area">-->
+                        <!--<div class="btn-group" data-toggle="buttons">-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '700') {%> active <%}%>" title="Полужирный">-->
+                                <!--<input type="checkbox" name="text_bold" <% if (fontWeight === '700') {%> checked <%}%>><i class="fa fa-bold"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (italic) {%> active <%}%>" title="Курсив">-->
+                                <!--<input type="checkbox"  name="text_italic" <% if (italic) {%> checked <%}%>><i class="fa fa-italic"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '300') {%> active <%}%>" title="Тонкий">-->
+                                <!--<input type="checkbox" name="text_tiny" <% if (fontWeight === '300') {%> checked <%}%>><i class="light-icon">L</i>-->
+                            <!--</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="col-md-3 checkbox visible-checkbox">
+                    <h5>Регистр</h5>
+                    <label>
+                        <input name="text_register" <% if (uppercase) {%> checked <%}%> type="checkbox">  Верхний регистр
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+
+                <!-- select -->
+                <div class="col-md-5 form-group">
+                    <label>Шрифт</label>
+                    <select class="form-control"  name="text_font">
+                        <option <% if (font === 'arial') {%> selected <%}%> value="arial">Arial</option>
+                        <option <% if (font === 'a_algerius_nr') {%> selected <%}%> value="a_algerius_nr">a_AlgeriusNr</option>
+                        <option <% if (font === 'a_alterna_otl') {%> selected <%}%> value="a_alterna_otl">a_AlternaOtl</option>
+                        <option <% if (font === 'a_alterna') {%> selected <%}%> value="a_alterna">a_Alterna</option>
+                        <option <% if (font === 'a_alterna_sh') {%> selected <%}%> value="a_alterna_sh">a_AlternaSh</option>
+                        <option <% if (font === 'a_alterna_titul_nr_cm') {%> selected <%}%> value="a_alterna_titul_nr_cm">a_Alterna Titul NrCm</option>
+                        <option <% if (font === 'a_antique_titul_gr') {%> selected <%}%> value="a_antique_titul_gr">a_Alterna Titul Gr</option>
+                        <option <% if (font === 'albertus') {%> selected <%}%> value="albertus">Albertus</option>
+                        <option <% if (font === 'allods_west') {%> selected <%}%> value="allods_west">Allods West</option>
+                        <option <% if (font === 'atiba_cyrillic') {%> selected <%}%> value="atiba_cyrillic">Atiba Cyrillic</option>
+                        <option <% if (font === 'courier_new_cyr') {%> selected <%}%> value="courier_new_cyr">Courier New Cyr</option>
+                        <option <% if (font === 'courier10_cyr_bt') {%> selected <%}%> value="courier10_cyr_bt">Courier10 Cyr Bt</option>
+                        <option <% if (font === 'dublon_c_bold') {%> selected <%}%> value="dublon_c_bold">Dublon C</option>
+                        <option <% if (font === 'dutch801_cyril_bt') {%> selected <%}%> value="dutch801_cyril_bt">Dutch801 Cyril Bt</option>
+                        <option <% if (font === 'ft40_roman') {%> selected <%}%> value="ft40_roman">Ft40 Roman</option>
+                        <option <% if (font === 'geometrica_sans') {%> selected <%}%> value="geometrica_sans">Geometrica Sans</option>
+                        <option <% if (font === 'impress_tl') {%> selected <%}%> value="impress_tl">Impress Tl</option>
+                        <option <% if (font === 'infinity') {%> selected <%}%> value="infinity">Infinity</option>
+                        <option <% if (font === 'kb_danube') {%> selected <%}%> value="kb_danube">Kb Danube</option>
+                        <option <% if (font === 'kramola') {%> selected <%}%> value="kramola">Kramola</option>
+                        <option <% if (font === 'leksa_pro') {%> selected <%}%> value="leksa_pro">Leksa Pro</option>
+                        <option <% if (font === 'merriweather') {%> selected <%}%> value="merriweather">Merriweather</option>
+                        <option <% if (font === 'news702_cyril_bt') {%> selected <%}%> value="news702_cyril_bt">News702 Cyril Bt</option>
+                        <option <% if (font === 'open_sans') {%> selected <%}%> value="open_sans">Open Sans</option>
+                        <option <% if (font === 'oz_handicraft_cyrillic_bt') {%> selected <%}%> value="oz_handicraft_cyrillic_bt">Oz Handicraft</option>
+                        <option <% if (font === 'pf_agora_sans_pro') {%> selected <%}%> value="pf_agora_sans_pro">PF Agora Sans Pro</option>
+                        <option <% if (font === 'pf_beau_sans_pro') {%> selected <%}%> value="pf_beau_sans_pro">PF Beau Sans Pro</option>
+                        <option <% if (font === 'pf_bulletin_sans_pro') {%> selected <%}%> value="pf_bulletin_sans_pro">PF Bulletin Sans Pro</option>
+                        <option <% if (font === 'pf_davinci_script_pro') {%> selected <%}%> value="pf_davinci_script_pro">PF Davinci Script Pro</option>
+                        <option <% if (font === 'pf_din_text_cond_pro') {%> selected <%}%> value="pf_din_text_cond_pro">PF Din Text Cound Pro</option>
+                        <option <% if (font === 'pf_hellenica_serif_pro') {%> selected <%}%> value="pf_hellenica_serif_pro">PF Hellenica Serif Pro</option>
+                        <option <% if (font === 'pf_kids_pro_grade') {%> selected <%}%> value="pf_kids_pro_grade">PF Kids Pro Grade</option>
+                        <option <% if (font === 'pf_monumenta_pro_metallica') {%> selected <%}%> value="pf_monumenta_pro_metallica">PF Monumenta Pro Metallica</option>
+                        <option <% if (font === 'pf_monumenta_pro') {%> selected <%}%> value="pf_monumenta_pro">PF Monumenta Pro</option>
+                        <option <% if (font === 'pf_wonderland_pro') {%> selected <%}%> value="pf_wonderland_pro">PF Wonderland Pro</option>
+                        <option <% if (font === 'play') {%> selected <%}%> value="play">Play</option>
+                        <option <% if (font === 'poster_bodoni_cyrillic_bt') {%> selected <%}%> value="poster_bodoni_cyrillic_bt">Poster Bodoni</option>
+                        <option <% if (font === 'pt_sans_caption') {%> selected <%}%> value="pt_sans_caption">PT Sans Caption</option>
+                        <option <% if (font === 'roboto') {%> selected <%}%> value="roboto">Roboto</option>
+                        <option <% if (font === 'times_new_roman_cyr') {%> selected <%}%> value="times_new_roman_cyr">Times New Roman</option>
+                        <option <% if (font === 'trebuchet_ms') {%> selected <%}%> value="trebuchet_ms">Trebuchet Ms</option>
+                        <option <% if (font === 'ubuntu') {%> selected <%}%> value="ubuntu">Ubuntu</option>
+                        <option <% if (font === 'wonderland') {%> selected <%}%> value="wonderland">Wonderland</option>
+                        <option <% if (font === 'aa_futured') {%> selected <%}%> value="aa_futured">AA Futured</option>
+                        <option <% if (font === 'century_gothic') {%> selected <%}%> value="century_gothic">Century Gothic</option>
+                        <option <% if (font === 'malgun_gothic_bol') {%> selected <%}%> value="malgun_gothic_bol">Malgun Gothic Bold</option>
+                        <option <% if (font === 'malgun_gothic') {%> selected <%}%> value="malgun_gothic">Malgun Gothic</option>
+                        <option <% if (font === 'adLib') {%> selected <%}%> value="adLib">Ad Lib</option>
+                        <option <% if (font === 'bsfmoj_shrifteg') {%> selected <%}%> value="bsfmoj_shrifteg">Bsfmoj Shrifteg</option>
+                        <option <% if (font === 'crushez') {%> selected <%}%> value="crushez">Crushez</option>
+                        <option <% if (font === 'ds_zombie') {%> selected <%}%> value="ds_zombie">DS Zombie</option>
+                        <option <% if (font === 'flashNiK') {%> selected <%}%> value="flashNiK">Flash NiK</option>
+                        <option <% if (font === 'font_1') {%> selected <%}%> value="font_1">Font 1</option>
+                        <option <% if (font === 'font_2') {%> selected <%}%> value="font_2">Font 2</option>
+                        <option <% if (font === 'neSkid') {%> selected <%}%> value="neSkid">Ne Skid</option>
+                        <option <% if (font === 'obelixPro') {%> selected <%}%> value="obelixPro">Obelix Pro</option>
+                        <option <% if (font === 'tf2Build') {%> selected <%}%> value="tf2Build">Tf2Build</option>
+                        <option <% if (font === 'thwack') {%> selected <%}%> value="thwack">Thwack</option>
+
+                    </select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Цвет шрифта</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="text_color" value="<%= color %>">
+                        <span class="input-group-addon"><div class="icon color" id="text_color_p_1" style="background-color: <%= color %>"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 tab-pane" id="tab_3">
+            <div class="col-md-12 box-body">
+                <div class="col-md-5 ">
+                    <label>Размер текста</label>
+                    <div class="row margin">
+                        <div class="col-sm-12">
+                            <input id="text_counter_size" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="col-md-4 widget-text-editor text-center">-->
+                <!--<label>Редактор текста:</label>-->
+                <!--<div class="widget-text-editor-area">-->
+                <!--<div class="btn-group" data-toggle="buttons">-->
+                <!--<label class="btn btn-default <% if (fontWeight === '700') {%> active <%}%>" title="Полужирный">-->
+                <!--<input type="checkbox" name="text_bold" <% if (fontWeight === '700') {%> checked <%}%>><i class="fa fa-bold"></i>-->
+                <!--</label>-->
+                <!--<label class="btn btn-default <% if (italic) {%> active <%}%>" title="Курсив">-->
+                <!--<input type="checkbox"  name="text_italic" <% if (italic) {%> checked <%}%>><i class="fa fa-italic"></i>-->
+                <!--</label>-->
+                <!--<label class="btn btn-default <% if (fontWeight === '300') {%> active <%}%>" title="Тонкий">-->
+                <!--<input type="checkbox" name="text_tiny" <% if (fontWeight === '300') {%> checked <%}%>><i class="light-icon">L</i>-->
+                <!--</label>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="col-md-3 checkbox visible-checkbox">
+                    <h5>Регистр</h5>
+                    <label>
+                        <input name="text_counter_register" <% if (uppercase) {%> checked <%}%> type="checkbox">  Верхний регистр
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+
+                <!-- select -->
+                <div class="col-md-5 form-group">
+                    <label>Шрифт</label>
+                    <select class="form-control"  name="text_counter_font">
+                        <option <% if (font === 'arial') {%> selected <%}%> value="arial">Arial</option>
+                        <option <% if (font === 'a_algerius_nr') {%> selected <%}%> value="a_algerius_nr">a_AlgeriusNr</option>
+                        <option <% if (font === 'a_alterna_otl') {%> selected <%}%> value="a_alterna_otl">a_AlternaOtl</option>
+                        <option <% if (font === 'a_alterna') {%> selected <%}%> value="a_alterna">a_Alterna</option>
+                        <option <% if (font === 'a_alterna_sh') {%> selected <%}%> value="a_alterna_sh">a_AlternaSh</option>
+                        <option <% if (font === 'a_alterna_titul_nr_cm') {%> selected <%}%> value="a_alterna_titul_nr_cm">a_Alterna Titul NrCm</option>
+                        <option <% if (font === 'a_antique_titul_gr') {%> selected <%}%> value="a_antique_titul_gr">a_Alterna Titul Gr</option>
+                        <option <% if (font === 'albertus') {%> selected <%}%> value="albertus">Albertus</option>
+                        <option <% if (font === 'allods_west') {%> selected <%}%> value="allods_west">Allods West</option>
+                        <option <% if (font === 'atiba_cyrillic') {%> selected <%}%> value="atiba_cyrillic">Atiba Cyrillic</option>
+                        <option <% if (font === 'courier_new_cyr') {%> selected <%}%> value="courier_new_cyr">Courier New Cyr</option>
+                        <option <% if (font === 'courier10_cyr_bt') {%> selected <%}%> value="courier10_cyr_bt">Courier10 Cyr Bt</option>
+                        <option <% if (font === 'dublon_c_bold') {%> selected <%}%> value="dublon_c_bold">Dublon C</option>
+                        <option <% if (font === 'dutch801_cyril_bt') {%> selected <%}%> value="dutch801_cyril_bt">Dutch801 Cyril Bt</option>
+                        <option <% if (font === 'ft40_roman') {%> selected <%}%> value="ft40_roman">Ft40 Roman</option>
+                        <option <% if (font === 'geometrica_sans') {%> selected <%}%> value="geometrica_sans">Geometrica Sans</option>
+                        <option <% if (font === 'impress_tl') {%> selected <%}%> value="impress_tl">Impress Tl</option>
+                        <option <% if (font === 'infinity') {%> selected <%}%> value="infinity">Infinity</option>
+                        <option <% if (font === 'kb_danube') {%> selected <%}%> value="kb_danube">Kb Danube</option>
+                        <option <% if (font === 'kramola') {%> selected <%}%> value="kramola">Kramola</option>
+                        <option <% if (font === 'leksa_pro') {%> selected <%}%> value="leksa_pro">Leksa Pro</option>
+                        <option <% if (font === 'merriweather') {%> selected <%}%> value="merriweather">Merriweather</option>
+                        <option <% if (font === 'news702_cyril_bt') {%> selected <%}%> value="news702_cyril_bt">News702 Cyril Bt</option>
+                        <option <% if (font === 'open_sans') {%> selected <%}%> value="open_sans">Open Sans</option>
+                        <option <% if (font === 'oz_handicraft_cyrillic_bt') {%> selected <%}%> value="oz_handicraft_cyrillic_bt">Oz Handicraft</option>
+                        <option <% if (font === 'pf_agora_sans_pro') {%> selected <%}%> value="pf_agora_sans_pro">PF Agora Sans Pro</option>
+                        <option <% if (font === 'pf_beau_sans_pro') {%> selected <%}%> value="pf_beau_sans_pro">PF Beau Sans Pro</option>
+                        <option <% if (font === 'pf_bulletin_sans_pro') {%> selected <%}%> value="pf_bulletin_sans_pro">PF Bulletin Sans Pro</option>
+                        <option <% if (font === 'pf_davinci_script_pro') {%> selected <%}%> value="pf_davinci_script_pro">PF Davinci Script Pro</option>
+                        <option <% if (font === 'pf_din_text_cond_pro') {%> selected <%}%> value="pf_din_text_cond_pro">PF Din Text Cound Pro</option>
+                        <option <% if (font === 'pf_hellenica_serif_pro') {%> selected <%}%> value="pf_hellenica_serif_pro">PF Hellenica Serif Pro</option>
+                        <option <% if (font === 'pf_kids_pro_grade') {%> selected <%}%> value="pf_kids_pro_grade">PF Kids Pro Grade</option>
+                        <option <% if (font === 'pf_monumenta_pro_metallica') {%> selected <%}%> value="pf_monumenta_pro_metallica">PF Monumenta Pro Metallica</option>
+                        <option <% if (font === 'pf_monumenta_pro') {%> selected <%}%> value="pf_monumenta_pro">PF Monumenta Pro</option>
+                        <option <% if (font === 'pf_wonderland_pro') {%> selected <%}%> value="pf_wonderland_pro">PF Wonderland Pro</option>
+                        <option <% if (font === 'play') {%> selected <%}%> value="play">Play</option>
+                        <option <% if (font === 'poster_bodoni_cyrillic_bt') {%> selected <%}%> value="poster_bodoni_cyrillic_bt">Poster Bodoni</option>
+                        <option <% if (font === 'pt_sans_caption') {%> selected <%}%> value="pt_sans_caption">PT Sans Caption</option>
+                        <option <% if (font === 'roboto') {%> selected <%}%> value="roboto">Roboto</option>
+                        <option <% if (font === 'times_new_roman_cyr') {%> selected <%}%> value="times_new_roman_cyr">Times New Roman</option>
+                        <option <% if (font === 'trebuchet_ms') {%> selected <%}%> value="trebuchet_ms">Trebuchet Ms</option>
+                        <option <% if (font === 'ubuntu') {%> selected <%}%> value="ubuntu">Ubuntu</option>
+                        <option <% if (font === 'wonderland') {%> selected <%}%> value="wonderland">Wonderland</option>
+                        <option <% if (font === 'aa_futured') {%> selected <%}%> value="aa_futured">AA Futured</option>
+                        <option <% if (font === 'century_gothic') {%> selected <%}%> value="century_gothic">Century Gothic</option>
+                        <option <% if (font === 'malgun_gothic_bol') {%> selected <%}%> value="malgun_gothic_bol">Malgun Gothic Bold</option>
+                        <option <% if (font === 'malgun_gothic') {%> selected <%}%> value="malgun_gothic">Malgun Gothic</option>
+
+                    </select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Цвет шрифта</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="text_counter_color" value="<%= color %>">
+                        <span class="input-group-addon"><div class="icon color" id="text_counter_color_p_1" style="background-color: <%= color %>"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_4">
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>0 баллов</label>
+                        <input type="text" class="form-control" placeholder="Дороги свободны"  name="text0" value="<%= text0 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>1 балл</label>
+                        <input type="text" class="form-control" placeholder="Дороги почти свободны"  name="text1" value="<%= text1 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>2 балла</label>
+                        <input type="text" class="form-control" placeholder="Местами затруднения"  name="text2" value="<%= text2 %>">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>3 балла</label>
+                        <input type="text" class="form-control" placeholder="Местами затруднения"  name="text3" value="<%= text3 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>4 балла</label>
+                        <input type="text" class="form-control" placeholder="Движение плотное"  name="text4" value="<%= text4 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>5 баллов</label>
+                        <input type="text" class="form-control" placeholder="Движение затрудненное"  name="text5" value="<%= text5 %>">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>6 баллов</label>
+                        <input type="text" class="form-control" placeholder="Серьёзные пробки"  name="text6" value="<%= text6 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>7 баллов</label>
+                        <input type="text" class="form-control" placeholder="Многокилометровые пробки"  name="text7" value="<%= text7 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>8 баллов</label>
+                        <input type="text" class="form-control" placeholder="Город стоит"  name="text8" value="<%= text8 %>">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>9 баллов</label>
+                        <input type="text" class="form-control" placeholder="Пешком быстрее"  name="text9" value="<%= text9 %>">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.tab-content -->
+</div>

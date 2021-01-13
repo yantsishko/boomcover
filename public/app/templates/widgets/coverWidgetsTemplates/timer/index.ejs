@@ -1,0 +1,10 @@
+<% if (isShown) { %>
+    <div id="timer_<%= id %>"  title="<%= title %>" class="timer-widget draggable ui-widget-content" style="
+        font-size: <%= size %>px;
+        <% if (uppercase) { %>text-transform: uppercase; <% } %>
+        color: <%= color %>;
+        left: <%= timerX %>px;
+        top: <%= timerY %>px;
+        font-family: <%= font %>;
+        " data-action="show-settings"><%= textBefore %><%= dateNow %></div>
+<% } %>

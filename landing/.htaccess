@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.boomcover.com$ [NC]
+RewriteRule ^(.*)$ https://boomcover.com/$1 [R=301,L]

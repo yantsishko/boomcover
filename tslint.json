@@ -1,0 +1,28 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"quotemark": [
+			true,
+			"single"
+		],
+		"object-literal-sort-keys": [
+			false
+		],
+		"trailing-comma": [
+			false
+		],
+		"variable-name": [
+			false
+		],
+		"max-line-length": false,
+		"interface-name": [
+			false
+		],
+		"member-access": [
+			true,
+			"no-public"
+		],
+		"no-bitwise": false,
+		"no-namespace": false
+	}
+}

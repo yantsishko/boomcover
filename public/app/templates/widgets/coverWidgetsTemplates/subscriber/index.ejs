@@ -1,0 +1,55 @@
+<% if (isShown) { %>
+    <div id="subscriber_<%= id %>"  title="<%= title %>" class="subscriber draggable ui-widget-content <%= imageFigure %>" style="
+            left: <%= imageX %>px;
+            top: <%= imageY %>px;
+            height: <%= imageSize %>px;
+            width: <%= imageSize %>px;
+            border-width: <%= borderSize %>px;
+            border-color: <%= borderColor %>;
+    " data-action="show-settings">
+        <% if (namePosition == 'separated') { %>
+            <div id="subscriber_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+                font-size: <%= nameSize %>px;
+                <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!nameShow) { %> visibility: hidden;<% } %>
+                color: <%= nameColor %>;
+                left: <%= absoluteNameX %>px;
+                top: <%= absoluteNameY %>px;
+                font-family: <%= nameFont %>;
+            ">Иван</div>
+            <div id="subscriber_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+                font-size: <%= lnameSize %>px;
+                <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!lnameShow) { %> visibility: hidden;<% } %>
+                color: <%= lnameColor %>;
+                left: <%= absoluteLNameX %>px;
+                top: <%= absoluteLNameY %>px;
+                font-family: <%= lnameFont %>;
+            ">Иванов</div>
+        <% } %>
+        <% if (namePosition == 'nameFirst') { %>
+            <div id="subscriber_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+                font-size: <%= nameSize %>px;
+                <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!nameShow) { %> visibility: hidden;<% } %>
+                color: <%= nameColor %>;
+                left: <%= absoluteNameX %>px;
+                top: <%= absoluteNameY %>px;
+                font-family: <%= nameFont %>;
+                white-space: nowrap;
+                ">Иван Иванов</div>
+        <% } %>
+        <% if (namePosition == 'lastNameFirst') { %>
+            <div id="subscriber_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+                font-size: <%= lnameSize %>px;
+                <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!lnameShow) { %> visibility: hidden;<% } %>
+                color: <%= lnameColor %>;
+                left: <%= absoluteLNameX %>px;
+                top: <%= absoluteLNameY %>px;
+                font-family: <%= lnameFont %>;
+                white-space: nowrap;
+                ">Иванов Иван</div>
+        <% } %>
+    </div>
+<% } %>

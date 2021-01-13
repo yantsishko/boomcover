@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "baseUrl": ".",
+    "typeRoots": [
+      "protected/@types",
+      "node_modules/@types"
+    ],
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@config": [
+        "config"
+      ],
+      "@db": [
+        "protected/database"
+      ],
+      "@entity/*": [
+        "protected/entities/*"
+      ],
+      "@repository/*": [
+        "protected/repositories/*"
+      ],
+      "@service/*": [
+        "protected/services/*"
+      ],
+      "@component/*": [
+        "protected/components/*"
+      ],
+      "@widget/*": [
+        "protected/covers/widgets/*"
+      ],
+      "@route/*": [
+        "protected/routes/*"
+      ],
+      "*": [
+        "protected/@types/*",
+        "node_modules/@types"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "public"
+  ]
+}

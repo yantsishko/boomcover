@@ -1,0 +1,1 @@
+define(["backbone"],function(t){return t.Model.extend({defaults:{name:"url",title:"Текст по ссылке",size:14,uppercase:!1,fontWeight:"none",italic:!1,font:"arial",color:"#ffffff",url:"",text:"Текст по ссылке",isShown:!0,textX:110,textY:20,showTextTime:!1,textStart:null,textEnd:null,gmt:"3"}})});

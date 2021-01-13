@@ -1,0 +1,1 @@
+define(["app","marionette","js/models/widgets/coverWidgets/itemView"],function(e,t,i){"use strict";return t.CollectionView.extend({childView:i,onChildviewSelectItem:function(e){this.triggerMethod("settings:show",e)}})});

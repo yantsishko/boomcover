@@ -1,0 +1,126 @@
+//Sync schema
+GET http://boomcover.dev/test/syncSchema HTTP/1.1
+###
+GET http://boomcover.dev/test HTTP/1.1
+###
+GET http://boomcover.dev/api/v1/current_user HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://app.boomcover.dev/test/generateCover/1 HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://boomcover.dev/test/generateCoverPreview/21 HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://boomcover.dev/test/generateAndUploadCover/2 HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://boomcover.dev/test/updateComments/2 HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://boomcover.dev/api/v1/group/1/cover/background HTTP/1.1
+Authorization: Bearer testusertoken
+###
+GET http://boomcover.dev/test/checkReposterWidget/16 HTTP/1.1
+Authorization: Bearer testusertoken
+###
+POST http://boomcover.dev/api/v1/payment/check HTTP/1.1
+content-type: application/json
+
+{
+    "action":"checkOrder",
+    "shopId":"100500",
+    "scid":"555777",
+    "customerNumber":"1",
+    "cdd_pan_mask":"444444|4448",
+    "orderNumber":"38",
+    "paymentType":"AC",
+    "invoiceId":"2000000833650",
+    "shopSumAmount":"750.00",
+    "md5":"A125814F82A3049DEA04E8D9D735C137",
+    "orderSumAmount":"3200.00",
+    "cdd_exp_date":"1217",
+    "paymentPayerCode":"4100322062290",
+    "cdd_rrn":"",
+    "external_id":"deposit",
+    "requestDatetime":"2016-07-11T15:29:35.438 03:00",
+    "depositNumber":"tNGTnJmP7sPdWnPiSeOXLUFLB5MZ.001f.201607",
+    "cps_user_country_code":"PL",
+    "orderCreatedDatetime":"2016-07-11T15:29:35.360 03:00",
+    "sk":"yed009c9df4e4f0a47d15e20d4af3231e",
+    "shopSumBankPaycash":"1003",
+    "shopSumCurrencyPaycash":"10643",
+    "rebillingOn":"false",
+    "orderSumBankPaycash":"1003",
+    "cps_region_id":"213",
+    "orderSumCurrencyPaycash":"10643",
+    "merchant_order_id":"38_110716152918_00000_64759",
+    "unilabel":"1f15a4dd-0009-5000-8000-0000116d476c",
+    "yandexPaymentId":"2570052456918"
+}
+###
+POST http://boomcover.dev/api/v1/payment/avisto HTTP/1.1
+content-type: application/json
+
+{
+    "action":"paymentAviso",
+    "shopId":"100500",
+    "scid":"555777",
+    "customerNumber":"1",
+    "cdd_pan_mask":"444444|4448",
+    "orderNumber":"38",
+    "paymentType":"AC",
+    "invoiceId":"2000000833650",
+    "shopSumAmount":"750.00",
+    "md5":"ECAED02797F899D8891F45299FD697FA",
+    "orderSumAmount":"3200.00",
+    "cdd_exp_date":"1217",
+    "paymentPayerCode":"4100322062290",
+    "cdd_rrn":"",
+    "external_id":"deposit",
+    "requestDatetime":"2016-07-11T15:29:35.438 03:00",
+    "depositNumber":"tNGTnJmP7sPdWnPiSeOXLUFLB5MZ.001f.201607",
+    "cps_user_country_code":"PL",
+    "orderCreatedDatetime":"2016-07-11T15:29:35.360 03:00",
+    "sk":"yed009c9df4e4f0a47d15e20d4af3231e",
+    "shopSumBankPaycash":"1003",
+    "shopSumCurrencyPaycash":"10643",
+    "rebillingOn":"false",
+    "orderSumBankPaycash":"1003",
+    "cps_region_id":"213",
+    "orderSumCurrencyPaycash":"10643",
+    "merchant_order_id":"38_110716152918_00000_64759",
+    "unilabel":"1f15a4dd-0009-5000-8000-0000116d476c",
+    "yandexPaymentId":"2570052456918"
+}
+###
+POST http://boomcover.dev/vk/group_callback/16 HTTP/1.1
+content-type: application/json
+
+{
+    "type":"wall_repost",
+    "object":{
+        "id":2607,
+        "from_id":28357583,
+        "owner_id":28357583,
+        "date":1502275714,
+        "post_type":"post",
+        "text":"",
+        "copy_history":[
+            {
+                "id":23,
+                "owner_id":-146756033,
+                "from_id":-146756033,
+                "date":1502275701,
+                "post_type":"post",
+                "text":"авыаыуачяуыаыуа",
+                "post_source":{"type":"vk"}
+            }
+        ],
+        "can_edit":1,
+        "can_delete":1,
+        "comments":{"count":0}
+    },
+    "group_id":146756033,
+    "secret":"Yl2TPRqLG7s2S6xTE4zSvbwiGa5VquFp"
+}

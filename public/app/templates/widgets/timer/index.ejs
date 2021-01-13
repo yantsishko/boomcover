@@ -1,0 +1,350 @@
+<div class="box-header with-border">
+    <h3 class="box-title"><i class="fa fa-cog pull-left"></i>Настройка виджета - Таймер</h3>
+</div>
+<!-- Custom Tabs -->
+<div class="col-md-12 nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Виджет</a></li>
+        <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки текста</a></li>
+        <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки дня</a></li>
+        <li><a href="#tab_4" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки часов</a></li>
+        <li><a href="#tab_5" data-toggle="tab"><i class="fa fa-cog pull-left"></i>Настройки минут</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="col-md-12 tab-pane active" id="tab_1">
+            <h4 class="box-title">Таймер</h4>
+            <div class="col-md-12 box-body">
+                <div class="col-md-4 form-group">
+                    <label>Часовой пояс</label>
+                    <select class="form-control select2" style="width: 100%;" name="timer_gmt">
+                        <option <% if (gmt === '11') {%> selected <%}%> value="11">GMT +11:00</option>
+                        <option <% if (gmt === '10') {%> selected <%}%> value="10">GMT +10:00</option>
+                        <option <% if (gmt === '9') {%> selected <%}%> value="9">GMT +09:00</option>
+                        <option <% if (gmt === '8') {%> selected <%}%> value="8">GMT +08:00</option>
+                        <option <% if (gmt === '7') {%> selected <%}%> value="7">GMT +07:00</option>
+                        <option <% if (gmt === '6') {%> selected <%}%> value="6">GMT +06:00</option>
+                        <option <% if (gmt === '5') {%> selected <%}%> value="5">GMT +05:00</option>
+                        <option <% if (gmt === '4') {%> selected <%}%> value="4">GMT +04:00</option>
+                        <option <% if (gmt === '3') {%> selected <%}%> value="3">GMT +03:00</option>
+                        <option <% if (gmt === '2') {%> selected <%}%> value="2">GMT +02:00</option>
+                        <option <% if (gmt === '1') {%> selected <%}%> value="1">GMT +01:00</option>
+                        <option <% if (gmt === '0') {%> selected <%}%> value="0">GMT 00:00</option>
+                        <option <% if (gmt === '-1') {%> selected <%}%> value="-1">GMT -01:00</option>
+                        <option <% if (gmt === '-2') {%> selected <%}%> value="-2">GMT -02:00</option>
+                        <option <% if (gmt === '-3') {%> selected <%}%> value="-3">GMT -03:00</option>
+                        <option <% if (gmt === '-4') {%> selected <%}%> value="-4">GMT -04:00</option>
+                        <option <% if (gmt === '-5') {%> selected <%}%> value="-5">GMT -05:00</option>
+                        <option <% if (gmt === '-6') {%> selected <%}%> value="-6">GMT -06:00</option>
+                        <option <% if (gmt === '-7') {%> selected <%}%> value="-7">GMT -07:00</option>
+                        <option <% if (gmt === '-8') {%> selected <%}%> value="-8">GMT -08:00</option>
+                        <option <% if (gmt === '-9') {%> selected <%}%> value="-9">GMT -09:00</option>
+                        <option <% if (gmt === '-10') {%> selected <%}%> value="-10">GMT -10:00</option>
+                        <option <% if (gmt === '-11') {%> selected <%}%> value="-11">GMT -11:00</option>
+                    </select>
+                    <!-- /.form-group -->
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Отсчет таймера до</label>
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control" id="datepicker" value="<%= endDate %>">
+                    </div>
+                    <!-- /.input group -->
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Текст перед таймером</label>
+                        <input type="text" class="form-control" value="<%= textBefore %>" name="timer_text_before" placeholder="До запуска осталось:">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_2">
+            <div class="col-md-12 box-body">
+                <div class="col-md-5">
+                    <label>Размер текста</label>
+                    <div class="row margin">
+                        <div class="col-sm-12">
+                            <input id="timer_text_size" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="col-md-4 widget-text-editor text-center">-->
+                    <!--<label>Редактор текста:</label>-->
+                    <!--<div class="widget-text-editor-area">-->
+                        <!--<div class="btn-group" data-toggle="buttons">-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '700') {%> active <%}%>" title="Полужирный">-->
+                                <!--<input type="checkbox" name="timer_text_bold" <% if (fontWeight === '700') {%> checked <%}%>><i class="fa fa-bold"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (italic) {%> active <%}%>" title="Курсив">-->
+                                <!--<input type="checkbox"  name="timer_text_italic" <% if (italic) {%> checked <%}%>><i class="fa fa-italic"></i>-->
+                            <!--</label>-->
+                            <!--<label class="btn btn-default <% if (fontWeight === '300') {%> active <%}%>" title="Тонкий">-->
+                                <!--<input type="checkbox" name="timer_text_tiny" <% if (fontWeight === '300') {%> checked <%}%>><i class="light-icon">L</i>-->
+                            <!--</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="col-md-3 checkbox visible-checkbox">
+                    <h5>Регистр</h5>
+                    <label>
+                        <input name="timer_text_register" <% if (uppercase) {%> checked <%}%> type="checkbox"> Верхний регистр
+                    </label>
+                </div>
+                <!-- select -->
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-5 form-group">
+                    <label>Шрифт</label>
+                    <select class="form-control" name="timer_text_font">
+                        <option <% if (font === 'arial') {%> selected <%}%> value="arial">Arial</option>
+                        <option <% if (font === 'a_algerius_nr') {%> selected <%}%> value="a_algerius_nr">a_AlgeriusNr</option>
+                        <option <% if (font === 'a_alterna_otl') {%> selected <%}%> value="a_alterna_otl">a_AlternaOtl</option>
+                        <option <% if (font === 'a_alterna') {%> selected <%}%> value="a_alterna">a_Alterna</option>
+                        <option <% if (font === 'a_alterna_sh') {%> selected <%}%> value="a_alterna_sh">a_AlternaSh</option>
+                        <option <% if (font === 'a_alterna_titul_nr_cm') {%> selected <%}%> value="a_alterna_titul_nr_cm">a_Alterna Titul NrCm</option>
+                        <option <% if (font === 'a_antique_titul_gr') {%> selected <%}%> value="a_antique_titul_gr">a_Alterna Titul Gr</option>
+                        <option <% if (font === 'albertus') {%> selected <%}%> value="albertus">Albertus</option>
+                        <option <% if (font === 'allods_west') {%> selected <%}%> value="allods_west">Allods West</option>
+                        <option <% if (font === 'atiba_cyrillic') {%> selected <%}%> value="atiba_cyrillic">Atiba Cyrillic</option>
+                        <option <% if (font === 'courier_new_cyr') {%> selected <%}%> value="courier_new_cyr">Courier New Cyr</option>
+                        <option <% if (font === 'courier10_cyr_bt') {%> selected <%}%> value="courier10_cyr_bt">Courier10 Cyr Bt</option>
+                        <option <% if (font === 'dublon_c_bold') {%> selected <%}%> value="dublon_c_bold">Dublon C</option>
+                        <option <% if (font === 'dutch801_cyril_bt') {%> selected <%}%> value="dutch801_cyril_bt">Dutch801 Cyril Bt</option>
+                        <option <% if (font === 'ft40_roman') {%> selected <%}%> value="ft40_roman">Ft40 Roman</option>
+                        <option <% if (font === 'geometrica_sans') {%> selected <%}%> value="geometrica_sans">Geometrica Sans</option>
+                        <option <% if (font === 'impress_tl') {%> selected <%}%> value="impress_tl">Impress Tl</option>
+                        <option <% if (font === 'infinity') {%> selected <%}%> value="infinity">Infinity</option>
+                        <option <% if (font === 'kb_danube') {%> selected <%}%> value="kb_danube">Kb Danube</option>
+                        <option <% if (font === 'kramola') {%> selected <%}%> value="kramola">Kramola</option>
+                        <option <% if (font === 'leksa_pro') {%> selected <%}%> value="leksa_pro">Leksa Pro</option>
+                        <option <% if (font === 'merriweather') {%> selected <%}%> value="merriweather">Merriweather</option>
+                        <option <% if (font === 'news702_cyril_bt') {%> selected <%}%> value="news702_cyril_bt">News702 Cyril Bt</option>
+                        <option <% if (font === 'open_sans') {%> selected <%}%> value="open_sans">Open Sans</option>
+                        <option <% if (font === 'oz_handicraft_cyrillic_bt') {%> selected <%}%> value="oz_handicraft_cyrillic_bt">Oz Handicraft</option>
+                        <option <% if (font === 'pf_agora_sans_pro') {%> selected <%}%> value="pf_agora_sans_pro">PF Agora Sans Pro</option>
+                        <option <% if (font === 'pf_beau_sans_pro') {%> selected <%}%> value="pf_beau_sans_pro">PF Beau Sans Pro</option>
+                        <option <% if (font === 'pf_bulletin_sans_pro') {%> selected <%}%> value="pf_bulletin_sans_pro">PF Bulletin Sans Pro</option>
+                        <option <% if (font === 'pf_davinci_script_pro') {%> selected <%}%> value="pf_davinci_script_pro">PF Davinci Script Pro</option>
+                        <option <% if (font === 'pf_din_text_cond_pro') {%> selected <%}%> value="pf_din_text_cond_pro">PF Din Text Cound Pro</option>
+                        <option <% if (font === 'pf_hellenica_serif_pro') {%> selected <%}%> value="pf_hellenica_serif_pro">PF Hellenica Serif Pro</option>
+                        <option <% if (font === 'pf_kids_pro_grade') {%> selected <%}%> value="pf_kids_pro_grade">PF Kids Pro Grade</option>
+                        <option <% if (font === 'pf_monumenta_pro_metallica') {%> selected <%}%> value="pf_monumenta_pro_metallica">PF Monumenta Pro Metallica</option>
+                        <option <% if (font === 'pf_monumenta_pro') {%> selected <%}%> value="pf_monumenta_pro">PF Monumenta Pro</option>
+                        <option <% if (font === 'pf_wonderland_pro') {%> selected <%}%> value="pf_wonderland_pro">PF Wonderland Pro</option>
+                        <option <% if (font === 'play') {%> selected <%}%> value="play">Play</option>
+                        <option <% if (font === 'poster_bodoni_cyrillic_bt') {%> selected <%}%> value="poster_bodoni_cyrillic_bt">Poster Bodoni</option>
+                        <option <% if (font === 'pt_sans_caption') {%> selected <%}%> value="pt_sans_caption">PT Sans Caption</option>
+                        <option <% if (font === 'roboto') {%> selected <%}%> value="roboto">Roboto</option>
+                        <option <% if (font === 'times_new_roman_cyr') {%> selected <%}%> value="times_new_roman_cyr">Times New Roman</option>
+                        <option <% if (font === 'trebuchet_ms') {%> selected <%}%> value="trebuchet_ms">Trebuchet Ms</option>
+                        <option <% if (font === 'ubuntu') {%> selected <%}%> value="ubuntu">Ubuntu</option>
+                        <option <% if (font === 'wonderland') {%> selected <%}%> value="wonderland">Wonderland</option>
+                        <option <% if (font === 'aa_futured') {%> selected <%}%> value="aa_futured">AA Futured</option>
+                        <option <% if (font === 'century_gothic') {%> selected <%}%> value="century_gothic">Century Gothic</option>
+                        <option <% if (font === 'malgun_gothic_bol') {%> selected <%}%> value="malgun_gothic_bol">Malgun Gothic Bold</option>
+                        <option <% if (font === 'malgun_gothic') {%> selected <%}%> value="malgun_gothic">Malgun Gothic</option>
+                        <option <% if (font === 'adLib') {%> selected <%}%> value="adLib">Ad Lib</option>
+                        <option <% if (font === 'bsfmoj_shrifteg') {%> selected <%}%> value="bsfmoj_shrifteg">Bsfmoj Shrifteg</option>
+                        <option <% if (font === 'crushez') {%> selected <%}%> value="crushez">Crushez</option>
+                        <option <% if (font === 'ds_zombie') {%> selected <%}%> value="ds_zombie">DS Zombie</option>
+                        <option <% if (font === 'flashNiK') {%> selected <%}%> value="flashNiK">Flash NiK</option>
+                        <option <% if (font === 'font_1') {%> selected <%}%> value="font_1">Font 1</option>
+                        <option <% if (font === 'font_2') {%> selected <%}%> value="font_2">Font 2</option>
+                        <option <% if (font === 'neSkid') {%> selected <%}%> value="neSkid">Ne Skid</option>
+                        <option <% if (font === 'obelixPro') {%> selected <%}%> value="obelixPro">Obelix Pro</option>
+                        <option <% if (font === 'tf2Build') {%> selected <%}%> value="tf2Build">Tf2Build</option>
+                        <option <% if (font === 'thwack') {%> selected <%}%> value="thwack">Thwack</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Цвет шрифта</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="timer_text_color" value="<%= color %>">
+                        <span class="input-group-addon"><div class="icon color" id="timer_text_color_p_1" style="background-color: <%= color %>"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_3">
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>День</label>
+                        <input type="text" class="form-control" name="timer_day1_name" placeholder="День" value="<%= day1 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Дня</label>
+                        <input type="text" class="form-control" name="timer_day2_name" placeholder="Дня" value="<%= day2 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Дней</label>
+                        <input type="text" class="form-control" name="timer_day3_name" placeholder="Дней" value="<%= day3 %>">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Количество дней</h5>
+                    <label>
+                        <input type="checkbox" name="timer_day_show" <% if (!dayShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Ведущие нули</h5>
+                    <label>
+                        <input type="checkbox" name="timer_day_zero_show" <% if (!dayZeroShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>0 дней</h5>
+                    <label>
+                        <input type="checkbox" name="timer_day_zero" <% if (!dayZero) { %> checked <% } %>> Отображать
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 form-group">
+                    <label>Расположение текста</label>
+                    <select class="form-control" name="timer_day_position">
+                        <option <% if (dayPosition === 'right') {%> selected <% } %> value="right">Текст справа цифр</option>
+                        <!--<option <% if (dayPosition === 'top') {%> selected <% } %> value="up">Текст сверху цифр</option>-->
+                        <!--<option <% if (dayPosition === 'down') {%> selected <% } %> value="down">Текст снизу цифр</option>-->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_4">
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Час</label>
+                        <input type="text" class="form-control" placeholder="Час" name="timer_hour1_name" value="<%= hour1 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Часа</label>
+                        <input type="text" class="form-control" placeholder="Часа" name="timer_hour2_name" value="<%= hour2 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Часов</label>
+                        <input type="text" class="form-control" placeholder="Часов" name="timer_hour3_name" value="<%= hour3 %>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Количество часов</h5>
+                    <label>
+                        <input type="checkbox" name="timer_hour_show" <% if (!hourShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Ведущие нули</h5>
+                    <label>
+                        <input type="checkbox"  name="timer_hour_zero_show" <% if (!hourZeroShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>0 часов</h5>
+                    <label>
+                        <input type="checkbox"  name="timer_hour_zero" <% if (!hourZero) { %> checked <% } %>> Отображать
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 form-group">
+                    <label>Расположение текста</label>
+                    <select class="form-control" name="timer_hour_position">
+                        <option <% if (hourPosition === 'right') {%> selected <% } %> value="right">Текст справа цифр</option>
+                        <!--<option <% if (hourPosition === 'top') {%> selected <% } %> value="up">Текст сверху цифр</option>-->
+                        <!--<option <% if (hourPosition === 'down') {%> selected <% } %> value="down">Текст снизу цифр</option>-->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 tab-pane" id="tab_5">
+            <div class="col-md-12 box-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Минута</label>
+                        <input type="text" class="form-control" placeholder="Минута"  name="timer_minutes1_name" value="<%= minutes1 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Минуты</label>
+                        <input type="text" class="form-control" placeholder="Минуты"  name="timer_minutes2_name" value="<%= minutes2 %>">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Минут</label>
+                        <input type="text" class="form-control" placeholder="Минут"  name="timer_minutes3_name" value="<%= minutes3 %>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Количество минут</h5>
+                    <label>
+                        <input type="checkbox" name="timer_minutes_show" <% if (!minutesShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>Ведущие нули</h5>
+                    <label>
+                        <input type="checkbox" name="timer_minutes_zero_show" <% if (!minutesZeroShow) { %> checked <% } %>> Не отображать
+                    </label>
+                </div>
+
+                <div class="col-md-4 checkbox visible-checkbox">
+                    <h5>0 минут</h5>
+                    <label>
+                        <input type="checkbox" name="timer_minutes_zero" <% if (!minutesZero) { %> checked <% } %>> Отображать
+                    </label>
+                </div>
+            </div>
+
+            <div class="box-body col-md-12">
+                <div class="col-md-4 form-group">
+                    <label>Расположение текста</label>
+                    <select class="form-control" name="timer_minutes_position">
+                        <option <% if (minutesPosition === 'right') {%> selected <% } %> value="right">Текст справа цифр</option>
+                        <!--<option <% if (minutesPosition === 'top') {%> selected <% } %> value="up">Текст сверху цифр</option>-->
+                        <!--<option <% if (minutesPosition === 'down') {%> selected <% } %> value="down">Текст снизу цифр</option>-->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

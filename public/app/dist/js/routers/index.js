@@ -1,0 +1,1 @@
+define(["marionette"],function(o){"use strict";return o.AppRouter.extend({appRoutes:{"":"showGroupsPage",price:"showPricePage",notifications:"showNotificationsPage",rewards:"showReferalsPage",history:"showHistoryPage","constructor/:groupId":"showConstructorPage"}})});

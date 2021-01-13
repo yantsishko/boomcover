@@ -1,0 +1,37 @@
+<% if (isShown) { %>
+    <% if (currencyFromShow) { %>
+        <div id="courses_from_<%= id %>"  title="<%= title %>" class="text-widget draggable ui-widget-content" style="
+                font-size: <%= size %>px;
+                <% if (uppercase) { %>text-transform: uppercase; <% } %>
+                color: <%= color %>;
+                left: <%= currencyFromX %>px;
+                top: <%= currencyFromY %>px;
+                font-family: <%= font %>;
+                " data-action="show-settings">
+            <% if (currencyFromShowTypePosition === 'before') { %>
+                <% if (currencyFromShowType === 'sign') { %>$<% } else { %>USD<% } %>
+            <% } %>
+            1
+            <% if (currencyFromShowTypePosition === 'after') { %>
+                <% if (currencyFromShowType === 'sign') { %>$<% } else { %>USD<% } %>
+            <% } %>
+        </div>
+    <% } %>
+
+    <div id="courses_to_<%= id %>"  title="<%= title %>" class="text-widget draggable ui-widget-content" style="
+            font-size: <%= size %>px;
+            <% if (uppercase) { %>text-transform: uppercase; <% } %>
+            color: <%= color %>;
+            left: <%= currencyToX %>px;
+            top: <%= currencyToY %>px;
+            font-family: <%= font %>;
+            " data-action="show-settings">
+            <% if (currencyToShowTypePosition === 'before') { %>
+                <% if (currencyToShowType === 'sign') { %>₽<% } else { %>RUB<% } %>
+            <% } %>
+            58.99
+            <% if (currencyToShowTypePosition === 'after') { %>
+                <% if (currencyToShowType === 'sign') { %>₽<% } else { %>RUB<% } %>
+            <% } %>
+    </div>
+<% } %>

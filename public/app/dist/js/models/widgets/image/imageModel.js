@@ -1,0 +1,1 @@
+define(["backbone"],function(e){return e.Model.extend({defaults:{name:"image",title:"Изображение по ссылке",size:100,file_url:"",isShown:!0,imageX:110,imageY:20,predifined_file:"head_moroz"}})});

@@ -1,0 +1,10 @@
+<% if (isShown) { %>
+    <div id="date_<%= id %>"   title="<%= title %>" class="date-widget draggable ui-widget-content" style="
+        font-size: <%= size %>px;
+        <% if (uppercase) { %>text-transform: uppercase; <% } %>
+        color: <%= color %>;
+        left: <%= dateX %>px;
+        top: <%= dateY %>px;
+        font-family: <%= font %>;
+    " data-action="show-settings"><%= textBefore %><%= dateNow %><%= textAfter %></div>
+<% } %>

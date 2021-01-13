@@ -1,0 +1,1 @@
+define(["app","marionette","backbone","underscore","./groupView"],function(e,t,i,n,o){"use strict";return t.CollectionView.extend({emptyView:!1,childView:o,childViewOptions:function(){return this.options.template?{templateName:"constructor"}:{templateName:"main"}}})});

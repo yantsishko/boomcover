@@ -1,0 +1,37 @@
+<div class="widget-list bg-light-blue <% if (!isShown) { %>offUseWidget <% } %>">
+    <div class="active-settings-widget" data-action="show-settings">
+         <span class="pull-left-container">
+        <i class="fa
+            <% if (name === "subscriber") { %>
+                fa-user
+            <% } else if (name === "date") { %>
+                fa-calendar
+            <% } else if (name === "text") { %>
+                fa-text-width
+            <% } else if (name === "weather") { %>
+                fa-umbrella
+            <% } else if (name === "timer") { %>
+                fa-clock-o
+             <% } else if (name === "commentatorLast" || name === "commentatorDay" || name === "commentatorLikes") { %>
+                fa-comments
+            <% } %>pull-left"></i>
+        </span>
+        <span class="widget-list-title"><%= title %></span>
+    </div>
+    <div class="toolbar-widgets">
+        <span class="onOff_activeWidgets">
+        <div class="form-group">
+        <div class="checkbox ">
+        <input type="checkbox" id="box-<%= id %>" data-action="active-widget" <% if (isShown) { %>checked
+                <% } %>
+        >
+        <label class="fa fa-power-off" for="box-<%= id %>"></label>
+        </div>
+
+        </div>
+    </span>
+        <span class="pull-right-container" data-action="delete-widget">
+    <i class="fa fa-close pull-right"></i>
+    </span>
+    </div>
+</div>

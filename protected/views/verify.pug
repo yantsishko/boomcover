@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+    h1 Wait a minute...
+
+block scripts
+    script(type='text/javascript').
+        window.localStorage.setItem('token', '#{token}');
+        window.location.href = '/';

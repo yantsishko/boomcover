@@ -1,0 +1,63 @@
+<% if (isShown) { %>
+<div id="reposter_day_<%= id %>" title="<%= title %>" class="reposter_day draggable ui-widget-content <%= imageFigure %>" style="
+        left: <%= imageX %>px;
+        top: <%= imageY %>px;
+        height: <%= imageSize %>px;
+        width: <%= imageSize %>px;
+        border-width: <%= borderSize %>px;
+        border-color: <%= borderColor %>;
+        " data-action="show-settings">
+    <% if (namePosition == 'separated') { %>
+        <div id="reposter_day_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+                font-size: <%= nameSize %>px;
+                <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!nameShow) { %> visibility: hidden;<% } %>
+                color: <%= nameColor %>;
+                left: <%= absoluteNameX %>px;
+                top: <%= absoluteNameY %>px;
+                font-family: <%= nameFont %>;
+                ">Иван</div>
+        <div id="reposter_day_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+                font-size: <%= lnameSize %>px;
+                <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+                <% if (!lnameShow) { %> visibility: hidden;<% } %>
+                color: <%= lnameColor %>;
+                left: <%= absoluteLNameX %>px;
+                top: <%= absoluteLNameY %>px;
+                font-family: <%= lnameFont %>;
+                ">Иванов</div>
+    <% } %>
+    <% if (namePosition == 'nameFirst') { %>
+        <div id="reposter_day_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+            font-size: <%= nameSize %>px;
+            <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+            <% if (!nameShow) { %> visibility: hidden;<% } %>
+            color: <%= nameColor %>;
+            left: <%= absoluteNameX %>px;
+            top: <%= absoluteNameY %>px;
+            font-family: <%= nameFont %>;
+            white-space: nowrap;
+            ">Иван Иванов</div>
+    <% } %>
+    <% if (namePosition == 'lastNameFirst') { %>
+        <div id="reposter_day_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+            font-size: <%= lnameSize %>px;
+            <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+            <% if (!lnameShow) { %> visibility: hidden;<% } %>
+            color: <%= lnameColor %>;
+            left: <%= absoluteLNameX %>px;
+            top: <%= absoluteLNameY %>px;
+            font-family: <%= lnameFont %>;
+            white-space: nowrap;
+            ">Иванов Иван</div>
+    <% } %>
+    <div id="reposter_day_reposts_count_<%= id %>" class="reposts-count draggable ui-widget-content" style="
+        <% if (!repostsCountShow) { %> visibility: hidden;<% } %>
+            left: <%= absoluteRepostsCountX %>px;
+            top: <%= absoluteRepostsCountY %>px;
+            color: #FFFFFF;
+            background: url(/imgs/widgets_icons/repost_icon_<%= reposterIconColor %>.png);
+            background-size: cover;
+            "><div class="reposts-count1">15</div></div>
+</div>
+<% } %>

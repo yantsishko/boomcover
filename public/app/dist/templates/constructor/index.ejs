@@ -1,0 +1,610 @@
+<div class="col-md-9  no-padding" id="constructor">
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Список групп</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div data-selector="groups"></div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+        </div>
+    </div>
+
+    <div class="col-md-12 redactor">
+
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">Редактор обложек</h3>
+
+
+                <!-- /.box-body -->
+            </div>
+
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center" id="group-name">
+
+                        </div>
+
+                        <div class="coverEditor">
+                            <!-- Sales Chart Canvas -->
+                            <div class="coverEditorZone" id="coverEditorZone" >
+                                <div class="coverEditorZone" id="coverEditorZoneMarkup" style="background: none;">
+                                    <div data-selector="widgets"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.chart-responsive -->
+                    </div>
+                    <!-- /.col -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- ./box-body -->
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="description-block ">
+                                <label for="file-upload" class="custom-file-upload btn btn-block btn-info">
+                                    Изменить фон
+                                </label>
+                                <input id="file-upload" type="file" name="file"/>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="description-block ">
+                                <button type="button" class="btn btn-block btn-info" data-action="save">Сохранить</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="description-block ">
+                                <button type="button" class="btn btn-block btn-info" data-action="preview" data-toggle="modal" data-target=".bs-example-modal-lg">Предпросмотр</button>
+
+                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Так будет выглядеть ваша обложка Вконтакте</h4>
+                                            </div>
+                                            <div class="modal-previewCover">
+                                                <div class="modalCover_img">
+                                                    <img class="img-coverPreview" src="/libs/adminlte/dist/img/vk-previewCover.jpg" alt="Генерируем превью обложки...">
+                                                </div>
+                                                <div class="modalCover_groupImg">
+                                                    <img class="img-coverPreview" src="" id="preview-image" alt="Генерируем превью обложки...">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <div class="checkbox pull-right">
+                            <label for="markup">
+                                <input type="checkbox" data-action="markup" id="markup">
+                                Разметка
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+        </div>
+    </div>
+    <!-- /.box-header -->
+
+    <div class="col-md-12 widgetSettings">
+        <div class="box box-primary">
+            <div data-selector="widget-settings"></div>
+        </div>
+        <!-- /.col -->
+    </div>
+</div>
+
+<div class="col-md-3 right_constructionPanel">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Найти группу</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <!-- search form -->
+            <form class="coverEditorSearch-form">
+                <div class="input-group  input-group-sm">
+                    <input type="text" name="search-group" class="form-control" placeholder="По имени или id">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                      </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+        </div>
+    </div>
+
+    <!--<div class="box box-danger widget-list-panel">-->
+        <!--<div class="box-header with-border">-->
+            <!--<h3 class="box-title">Список виджетов</h3>-->
+
+            <!--<div class="box-tools pull-right">-->
+                <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="box-body">-->
+            <!--<div class="panel-body" >-->
+                <!--<ul class="widgets-list-panel">-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-user"></i>-->
+                        <!--<div class="widgets-list-panel__name">Подписчики</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-subscriber">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-comments"></i>-->
+                        <!--<div class="widgets-list-panel__name">Последний комментатор</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-last-commentator">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-comments"></i>-->
+                        <!--<div class="widgets-list-panel__name">Комментатор дня</div>-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-day-commentator">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-comments"></i>-->
+                        <!--<div class="widgets-list-panel__name">Комментатор по лайкам</div>-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-likes-commentator">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-calendar"></i>-->
+                        <!--<div class="widgets-list-panel__name">Дата и время</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-date">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-clock-o"></i>-->
+                        <!--<div class="widgets-list-panel__name">Таймер</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-timer">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-umbrella"></i>-->
+                        <!--<div class="widgets-list-panel__name">Погода</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-weather">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="widgets-list-panel__icon fa fa-text-width"></i>-->
+                        <!--<div class="widgets-list-panel__name">Текст</div>-->
+                        <!--&lt;!&ndash;<button type="button" class="btn btn-information" data-container="body" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-info"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--<div class="btn-wrap">-->
+                            <!--<button class="btn btn-add-widget" data-id="1" data-action="add-text">Добавить</button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h4 class="box-title">Активные виджеты</h4>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <!-- the events -->
+            <div id="widgets-list">
+                <div data-selector="active-widgets"></div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /. box -->
+</div>
+
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="wigets_panel">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-right"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>Список виджетов</h3>
+            </div>
+
+            <ul class="list-unstyled widgets">
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-subscriber">
+                        <i class="widgets-list-panel__icon fa fa-user" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Подписчик</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-subscriber"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-subscriber" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит последнего подписчика на обложку. Помогает увеличить количество вступлений в группу.</p>
+                    </div>
+                </li>
+                <% if (!isClosed) { %>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-day-liker">
+                        <i class="widgets-list-panel__icon fa fa-heart" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Лайкер дня</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-liker-day"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-liker-day" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет поможет выявить самого активного подписчика, который поставил больше всего лайков в течение дня. Стимулирует людей проявлять большую активность в вашем сообществе.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-last-commentator">
+                        <i class="widgets-list-panel__icon fa fa-comments" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Посл. комментатор</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#"  data-action="info-last-comment"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-last-comment" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит последнего комментатора на обложку. Помогает увеличить активность в группе.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-likes-commentator">
+                        <i class="widgets-list-panel__icon fa fa-heart" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Комментатор по лайкам</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-comm-likes"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-comm-likes" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит комментатора, который набрал большее количество лайков за выбранный период. Можно использовать для проведения конкурсов, связанных с комментариями.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-day-commentator">
+                        <i class="widgets-list-panel__icon fa fa-commenting" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Комментатор дня</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-comm-day"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-comm-day" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет поможет выявить самого активного комментатора в течение дня. Стимулирует людей проявлять большую активность в вашем сообществе.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-day-reposter">
+                        <i class="widgets-list-panel__icon fa fa-bullhorn" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Репостер дня</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-reposter-day"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-reposter-day" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет поможет выявить самого активного репостера в течение дня. Стимулирует людей проявлять большую активность в вашем сообществе.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-last-reposter">
+                        <i class="widgets-list-panel__icon fa fa-bullhorn" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Последний репостер</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-reposter-last"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-reposter-last" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит последнего репостера на обложку. Помогает увеличить количество репостов в группе.</p>
+                    </div>
+                </li>
+                <% } %>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-date">
+                        <i class="widgets-list-panel__icon fa fa-calendar" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Дата и время</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#"  data-action="info-date"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-date" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет помогает вашим подписчикам следить за датой и временем находясь в вашем сообществе. </p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-timer">
+                        <i class="widgets-list-panel__icon fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Таймер</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-timer"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-timer" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет помогает организовать обратный отсчет времени для розыгрышей, проведения акций и скидок.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-weather">
+                        <i class="widgets-list-panel__icon fa fa-umbrella" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Погода</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-weather"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-weather" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет помогает вашим подписчикам быть вкурсе акутальной погоды в любое время. Особенно полезно группам по туризму.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-text">
+                        <i class="widgets-list-panel__icon fa fa-text-width" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Текст</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-text">
+                        <i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-text" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит произвольный текст с возможностью указания периода отображения. Можно использовать для вывода специальных кодов в течение периода (код скидки, кодовое слово и т.д.).</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-textUrl">
+                        <i class="widgets-list-panel__icon fa fa-text-width" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Текст по ссылке</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-textUrl">
+                            <i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-textUrl" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит текст по ссылке с возможностью указания периода отображения. Можно использовать для вывода статистики с сайтов.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-winner">
+                        <i class="widgets-list-panel__icon fa fa-user" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Победитель</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-winner"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-winner" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит пользователя по его ID. Позволяет выводить победителя(ей) розыгрыша на обложку.</p>
+                    </div>
+                </li>
+                <% if(isStatus) { %>
+                    <li class="default-widgetsGroup">
+                        <a class="list-widgets_a" data-action="add-statistic">
+                            <i class="widgets-list-panel__icon fa fa-bar-chart" aria-hidden="true"></i>
+                            <div class="widgets-list-panel__name">Статистика группы</div>
+                            <div class="btn-wrap">
+                                <button class="btn btn-add-widget" data-id="1">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </a>
+                        <div class="widget-list-panel__buttonHelp">
+                            <a href="#" data-action="info-statistic"><i class="fa fa-question"></i></a>
+                        </div>
+                        <div class="widgets-list-panel__description" role="tooltip" id="info-statistic" style="display: none; ">
+                            <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                            <p>Виджет выводит статистику группы (общее количество подписчиков и новых подписчиков, уникальных посетителей и посещений в режиме реального времени).</p>
+                        </div>
+                    </li>
+                <% } %>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-courses">
+                        <i class="widgets-list-panel__icon fa fa-money" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Курсы валют</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-courses"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-courses" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит текущий курс валют на обложку.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-traffic">
+                        <i class="widgets-list-panel__icon fa fa-car" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Пробки</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-traffic"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-traffic" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет выводит уровень пробок в городе на обложку.</p>
+                    </div>
+                </li>
+                <li class="default-widgetsGroup">
+                    <a class="list-widgets_a" data-action="add-image">
+                        <i class="widgets-list-panel__icon fa fa-picture-o" aria-hidden="true"></i>
+                        <div class="widgets-list-panel__name">Изображение</div>
+                        <div class="btn-wrap">
+                            <button class="btn btn-add-widget" data-id="1">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </a>
+                    <div class="widget-list-panel__buttonHelp">
+                        <a href="#" data-action="info-image"><i class="fa fa-question"></i></a>
+                    </div>
+                    <div class="widgets-list-panel__description" role="tooltip" id="info-image" style="display: none; ">
+                        <a href="#" data-action="close-info"><i class="fa fa-close"></i></a>
+                        <p>Виджет позволяет добавить любую картинку.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://boomcover.com/updates.html" target="_blank" class="download">Описания виджетов</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+        <div class="sidebar-widgetsAdd">
+            <div class="">
+                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn btn-add-widget" style="border: none">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span class="button_text">Добавить виджет</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay"></div>

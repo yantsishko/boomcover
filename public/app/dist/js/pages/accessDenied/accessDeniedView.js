@@ -1,0 +1,1 @@
+define(["marionette","underscore","text!templates/accessDenies/index.ejs"],function(e,t,s){"use strict";return e.ItemView.extend({template:t.template(s),className:"access-denied"})});

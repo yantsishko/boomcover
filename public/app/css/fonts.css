@@ -1,0 +1,519 @@
+@font-face {
+    font-family: a_algerius_nr;
+    src: url(fonts/a_algerius_nr_regular.ttf);
+}
+
+@font-face {
+    font-family: a_alterna_otl;
+    src: url(fonts/a_alterna_otl_regular.ttf);
+}
+
+@font-face {
+    font-family: a_alterna;
+    src: url(fonts/a_alterna_regular.ttf);
+}
+
+@font-face {
+    font-family: a_alterna_sh;
+    src: url(fonts/a_alterna_sh_regular.ttf);
+}
+
+@font-face {
+    font-family: a_alterna_titul_nr_cm;
+    src: url(fonts/a_alterna_titul_nr_cm_regular.ttf);
+}
+
+@font-face {
+    font-family: a_antique_titul_gr;
+    src: url(fonts/a_antique_titul_gr_regular.ttf);
+}
+
+@font-face {
+    font-family: albertus_extra_bold;
+    src: url(fonts/albertus_extra_bold.ttf);
+}
+
+@font-face {
+    font-family: albertus;
+    src: url(fonts/albertus_regular.ttf);
+}
+
+@font-face {
+    font-family: allods_west;
+    src: url(fonts/allods_west_regular.ttf);
+}
+
+@font-face {
+    font-family: arial_bold_italic;
+    src: url(fonts/arial_bold_italic.ttf);
+}
+
+@font-face {
+    font-family: arial_bold;
+    src: url(fonts/arial_bold.ttf);
+}
+
+@font-face {
+    font-family: arial_italic;
+    src: url(fonts/arial_italic.ttf);
+}
+
+@font-face {
+    font-family: arial;
+    src: url(fonts/arial_regular.ttf);
+}
+
+@font-face {
+    font-family: atiba_cyrillic;
+    src: url(fonts/atiba_cyrillic_regular.ttf);
+}
+
+@font-face {
+    font-family: courier_new_cyr_bold;
+    src: url(fonts/courier_new_cyr_bold.ttf);
+}
+
+@font-face {
+    font-family: courier_new_cyr_italic;
+    src: url(fonts/courier_new_cyr_italic.ttf);
+}
+
+@font-face {
+    font-family: courier_new_cyr;
+    src: url(fonts/courier_new_cyr_regular.ttf);
+}
+
+@font-face {
+    font-family: courier10_cyr_bt_bold_italic;
+    src: url(fonts/courier10_cyr_bt_bold_italic.ttf);
+}
+
+@font-face {
+    font-family: courier10_cyr_bt_bold;
+    src: url(fonts/courier10_cyr_bt_bold.ttf);
+}
+
+@font-face {
+    font-family: courier10_cyr_bt_italic;
+    src: url(fonts/courier10_cyr_bt_italic.ttf);
+}
+
+@font-face {
+    font-family: courier10_cyr_bt;
+    src: url(fonts/courier10_cyr_bt_regular.ttf);
+}
+
+@font-face {
+    font-family: dublon_c_bold;
+    src: url(fonts/dublon_c_bold_regular.ttf);
+}
+
+@font-face {
+    font-family: dutch801_cyril_bt_bold_italic;
+    src: url(fonts/dutch801_cyril_bt_bold_italic.ttf);
+}
+
+@font-face {
+    font-family: dutch801_cyril_bt_bold;
+    src: url(fonts/dutch801_cyril_bt_bold.ttf);
+}
+
+@font-face {
+    font-family: dutch801_cyril_bt_italic;
+    src: url(fonts/dutch801_cyril_bt_italic.ttf);
+}
+
+@font-face {
+    font-family: dutch801_cyril_bt;
+    src: url(fonts/dutch801_cyril_bt_regular.ttf);
+}
+
+@font-face {
+    font-family: eurofurence_bold_italic;
+    src: url(fonts/eurofurence_bold_italic.ttf);
+}
+
+@font-face {
+    font-family: eurofurence_bold;
+    src: url(fonts/eurofurence_bold.ttf);
+}
+
+@font-face {
+    font-family: ft40_roman;
+    src: url(fonts/ft40_roman_regular.ttf);
+}
+
+@font-face {
+    font-family: geometrica_sans;
+    src: url(fonts/geometrica_sans_regular.ttf);
+}
+
+@font-face {
+    font-family: helveticaneuecyr;
+    src: url(fonts/helveticaneuecyr.ttf);
+}
+
+@font-face {
+    font-family: impress_tl;
+    src: url(fonts/impress_tl_regular.ttf);
+}
+
+@font-face {
+    font-family: infinity;
+    src: url(fonts/infinity_regular.ttf);
+}
+
+@font-face {
+    font-family: kb_danube;
+    src: url(fonts/kb_danube_regular.ttf);
+}
+
+@font-face {
+    font-family: kramola;
+    src: url(fonts/kramola_regular.ttf);
+}
+
+@font-face {
+    font-family: leksa_pro_bold;
+    src: url(fonts/leksa_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: leksa_pro_light;
+    src: url(fonts/leksa_pro_light.ttf);
+}
+
+@font-face {
+    font-family: leksa_pro;
+    src: url(fonts/leksa_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: merriweather_bold;
+    src: url(fonts/merriweather_bold.ttf);
+}
+
+@font-face {
+    font-family: merriweather_italic;
+    src: url(fonts/merriweather_italic.ttf);
+}
+
+@font-face {
+    font-family: merriweather_light;
+    src: url(fonts/merriweather_light.ttf);
+}
+
+@font-face {
+    font-family: merriweather;
+    src: url(fonts/merriweather_regular.ttf);
+}
+
+@font-face {
+    font-family: myriad_pro_bold;
+    src: url(fonts/myriad_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: news702_cyril_bt_bold;
+    src: url(fonts/news702_cyril_bt_bold.ttf);
+}
+
+@font-face {
+    font-family: news702_cyril_bt_italic;
+    src: url(fonts/news702_cyril_bt_italic.ttf);
+}
+
+@font-face {
+    font-family: news702_cyril_bt;
+    src: url(fonts/news702_cyril_bt_regular.ttf);
+}
+
+@font-face {
+    font-family: open_sans_bold;
+    src: url(fonts/open_sans_bold.ttf);
+}
+
+@font-face {
+    font-family: open_sans_Italic;
+    src: url(fonts/open_sans_Italic.ttf);
+}
+
+@font-face {
+    font-family: open_sans;
+    src: url(fonts/open_sans_regular.ttf);
+}
+
+@font-face {
+    font-family: oz_handicraft_cyrillic_bt;
+    src: url(fonts/oz_handicraft_cyrillic_bt_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_agora_sans_pro_bold;
+    src: url(fonts/pf_agora_sans_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_agora_sans_pro_light;
+    src: url(fonts/pf_agora_sans_pro_light.ttf);
+}
+
+@font-face {
+    font-family: pf_agora_sans_pro;
+    src: url(fonts/pf_agora_sans_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_beau_sans_pro_bold;
+    src: url(fonts/pf_beau_sans_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_beau_sans_pro_light;
+    src: url(fonts/pf_beau_sans_pro_light.ttf);
+}
+
+@font-face {
+    font-family: pf_beau_sans_pro;
+    src: url(fonts/pf_beau_sans_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_bulletin_sans_pro_bold;
+    src: url(fonts/pf_bulletin_sans_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_bulletin_sans_pro_light;
+    src: url(fonts/pf_bulletin_sans_pro_light.ttf);
+}
+
+@font-face {
+    font-family: pf_bulletin_sans_pro;
+    src: url(fonts/pf_bulletin_sans_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_davinci_script_pro_bold;
+    src: url(fonts/pf_davinci_script_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_davinci_script_pro;
+    src: url(fonts/pf_davinci_script_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_din_text_cond_pro_bold;
+    src: url(fonts/pf_din_text_cond_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_din_text_cond_pro_light;
+    src: url(fonts/pf_din_text_cond_pro_light.ttf);
+}
+
+@font-face {
+    font-family: pf_din_text_cond_pro;
+    src: url(fonts/pf_din_text_cond_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_hellenica_serif_pro_bold;
+    src: url(fonts/pf_hellenica_serif_pro_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_hellenica_serif_pro_light;
+    src: url(fonts/pf_hellenica_serif_pro_light.ttf);
+}
+
+@font-face {
+    font-family: pf_hellenica_serif_pro;
+    src: url(fonts/pf_hellenica_serif_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_kids_pro_grade_bold;
+    src: url(fonts/pf_kids_pro_grade_bold.ttf);
+}
+
+@font-face {
+    font-family: pf_kids_pro_grade_light;
+    src: url(fonts/pf_kids_pro_grade_light.ttf);
+}
+
+@font-face {
+    font-family: pf_kids_pro_grade;
+    src: url(fonts/pf_kids_pro_grade_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_monumenta_pro_metallica;
+    src: url(fonts/pf_monumenta_pro_metallica_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_monumenta_pro;
+    src: url(fonts/pf_monumenta_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: pf_wonderland_pro;
+    src: url(fonts/pf_wonderland_pro_regular.ttf);
+}
+
+@font-face {
+    font-family: play;
+    src: url(fonts/play_regular.ttf);
+}
+
+@font-face {
+    font-family: poster_bodoni_cyrillic_bt;
+    src: url(fonts/poster_bodoni_cyrillic_bt_regular.ttf);
+}
+
+@font-face {
+    font-family: pt_sans_caption_bold;
+    src: url(fonts/pt_sans_caption_bold.ttf);
+}
+
+@font-face {
+    font-family: pt_sans_caption;
+    src: url(fonts/pt_sans_caption_regular.ttf);
+}
+
+@font-face {
+    font-family: pt_serif_caption_italic;
+    src: url(fonts/pt_serif_caption_italic.ttf);
+}
+
+@font-face {
+    font-family: roboto_bold;
+    src: url(fonts/roboto_bold.ttf);
+}
+
+@font-face {
+    font-family: roboto_light;
+    src: url(fonts/roboto_light.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/roboto_regular.ttf);
+}
+
+@font-face {
+    font-family: tahoma;
+    src: url(fonts/tahoma_regular.ttf);
+}
+
+@font-face {
+    font-family: times_new_roman_cyr_bold;
+    src: url(fonts/times_new_roman_cyr_bold.ttf);
+}
+
+@font-face {
+    font-family: times_new_roman_cyr_italic;
+    src: url(fonts/times_new_roman_cyr_italic.ttf);
+}
+
+@font-face {
+    font-family: times_new_roman_cyr;
+    src: url(fonts/times_new_roman_cyr_regular.ttf);
+}
+
+@font-face {
+    font-family: trebuchet_ms;
+    src: url(fonts/trebuchet_ms_regular.ttf);
+}
+
+@font-face {
+    font-family: ubuntu_bold;
+    src: url(fonts/ubuntu_bold.ttf);
+}
+
+@font-face {
+    font-family: ubuntu_italic;
+    src: url(fonts/ubuntu_italic.ttf);
+}
+
+@font-face {
+    font-family: ubuntu_light;
+    src: url(fonts/ubuntu_light.ttf);
+}
+
+@font-face {
+    font-family: ubuntu;
+    src: url(fonts/ubuntu_regular.ttf);
+}
+
+@font-face {
+    font-family: wonderland;
+    src: url(fonts/wonderland_regular.ttf);
+}
+
+@font-face {
+    font-family: aa_futured;
+    src: url(fonts/aa_futured_regular.ttf);
+}
+
+@font-face {
+    font-family: century_gothic;
+    src: url(fonts/century_gothic_regular.ttf);
+}
+
+@font-face {
+    font-family: malgun_gothic_bol;
+    src: url(fonts/malgun_gothic_bol_regular.ttf);
+}
+
+@font-face {
+    font-family: malgun_gothic;
+    src: url(fonts/malgun_gothic_regular.ttf);
+}
+
+@font-face {
+    font-family: adLib;
+    src: url(fonts/adLib_regular.ttf);
+}
+@font-face {
+    font-family: bsfmoj_shrifteg;
+    src: url(fonts/bsfmoj_shrifteg_regular.ttf);
+}
+@font-face {
+    font-family: crushez;
+    src: url(fonts/crushez_regular.ttf);
+}
+@font-face {
+    font-family: ds_zombie;
+    src: url(fonts/ds_zombie_regular.ttf);
+}
+@font-face {
+    font-family: flashNiK;
+    src: url(fonts/flashNiK_regular.ttf);
+}
+@font-face {
+    font-family: font_1;
+    src: url(fonts/font_1_regular.ttf);
+}
+@font-face {
+    font-family: font_2;
+    src: url(fonts/font_2_regular.ttf);
+}
+@font-face {
+    font-family: neSkid;
+    src: url(fonts/neSkid_regular.ttf);
+}
+@font-face {
+    font-family: obelixPro;
+    src: url(fonts/obelixPro_regular.ttf);
+}
+@font-face {
+    font-family: tf2Build;
+    src: url(fonts/tf2Build_regular.ttf);
+}
+@font-face {
+    font-family: thwack;
+    src: url(fonts/thwack_regular.ttf);
+}

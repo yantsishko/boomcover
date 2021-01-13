@@ -1,0 +1,1 @@
+define(["backbone"],function(e){"use strict";return e.Collection.extend({model:e.Model.extend({})})});

@@ -1,0 +1,1 @@
+define(["backbone"],function(e){return e.Model.extend({defaults:{name:"date",title:"Дата и время",size:14,uppercase:!1,fontWeight:"none",italic:!1,font:"arial",color:"#ffffff",textBefore:"",textAfter:"",gmt:"3",format:"DD.MM.YYYY HH:mm",isShown:!0,dateX:110,dateY:50}})});

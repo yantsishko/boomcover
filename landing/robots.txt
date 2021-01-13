@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /css
+Disallow: /fonts
+Disallow: /js
+sitemap: https://boomcover.com/sitemap.xml
+Host: https://boomcover.com

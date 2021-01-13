@@ -1,0 +1,68 @@
+<% if (isShown) { %>
+<div id="commentator_day_<%= id %>" title="<%= title %>" class="commentator_day draggable ui-widget-content <%= imageFigure %>" style="
+        left: <%= imageX %>px;
+        top: <%= imageY %>px;
+        height: <%= imageSize %>px;
+        width: <%= imageSize %>px;
+        border-width: <%= borderSize %>px;
+        border-color: <%= borderColor %>;
+        " data-action="show-settings">
+    <% if (namePosition == 'separated') { %>
+        <div id="commentator_day_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+                font-size: <%= nameSize %>px;
+        <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+        <% if (!nameShow) { %> visibility: hidden;<% } %>
+                color: <%= nameColor %>;
+                left: <%= absoluteNameX %>px;
+                top: <%= absoluteNameY %>px;
+                font-family: <%= nameFont %>;
+                ">Иван</div>
+        <div id="commentator_day_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+            font-size: <%= lnameSize %>px;
+    <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+    <% if (!lnameShow) { %> visibility: hidden;<% } %>
+            color: <%= lnameColor %>;
+            left: <%= absoluteLNameX %>px;
+            top: <%= absoluteLNameY %>px;
+            font-family: <%= lnameFont %>;
+            ">Иванов</div>
+    <% } %>
+    <% if (namePosition == 'nameFirst') { %>
+        <div id="commentator_day_fname_<%= id %>" class="fname draggable ui-widget-content" style="
+            font-size: <%= nameSize %>px;
+    <% if (nameUppercase) { %>text-transform: uppercase; <% } %>
+    <% if (!nameShow) { %> visibility: hidden;<% } %>
+            color: <%= nameColor %>;
+            left: <%= absoluteNameX %>px;
+            top: <%= absoluteNameY %>px;
+            font-family: <%= nameFont %>;
+            white-space: nowrap;
+            ">Иван Иванов</div>
+    <% } %>
+    <% if (namePosition == 'lastNameFirst') { %>
+        <div id="commentator_day_lname_<%= id %>" class="lname draggable ui-widget-content" style="
+            font-size: <%= lnameSize %>px;
+    <% if (lnameUppercase) { %>text-transform: uppercase; <% } %>
+    <% if (!lnameShow) { %> visibility: hidden;<% } %>
+            color: <%= lnameColor %>;
+            left: <%= absoluteLNameX %>px;
+            top: <%= absoluteLNameY %>px;
+            font-family: <%= lnameFont %>;
+            white-space: nowrap;
+            ">Иванов Иван</div>
+    <% } %>
+    <div id="commentator_day_comment_<%= id %>" class="comment draggable ui-widget-content" style="
+    <% if (!commentShow) { %> visibility: hidden;<% } %>
+            left: <%= absoluteLNameX %>px;
+            top: <%= absoluteLNameY %>px;
+            ">Комментарий</div>
+    <div id="commentator_day_comments_count_<%= id %>" class="comment-count draggable ui-widget-content" style="
+        <% if (!commentCountShow) { %> visibility: hidden;<% } %>
+            left: <%= absoluteCommentCountX %>px;
+            top: <%= absoluteCommentCountY %>px;
+            color: #FFFFFF;
+            background: url(/imgs/widgets_icons/message_icon_<%= commentIconColor %>.png);
+            background-size: cover;
+            "><div class="comment-count1">15</div></div>
+</div>
+<% } %>

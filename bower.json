@@ -1,0 +1,26 @@
+{
+  "name": "boomcover",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Yan Tsishko <panrahk@mail.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "backbone.marionette": "marionette#^2.4.7",
+    "jquery": "^2.2.4",
+    "ejs": "^1.0.0",
+    "text": "requirejs-text#^2.0.15",
+    "requirejs": "^2.2.0",
+    "PACE": "pace#^1.0.2",
+    "fabric.js": "fabric#^1.7.11",
+    "bootstrap-daterangepicker": "^2.1.25",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+  }
+}

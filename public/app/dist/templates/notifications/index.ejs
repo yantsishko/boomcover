@@ -1,0 +1,55 @@
+<section class="content-header">
+    <h1>
+        Настройка уведомлений сервиса
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements disabled -->
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Настройка уведомлений</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="alert alert-danger alert-dismissible">
+                        <h4><i class="icon fa fa-info"></i> Важно!</h4>
+                        Разрешите присылать вам следующие уведомления, чтобы быть в курсе работоспособности обложки вашего сообщества:
+                    </div>
+                    <div class="notice_info">
+                        <ol>
+                            <li>Получать уведомление, если произошла ошибка с access token (К примеру вы сменили пароль от Вконтакте)</li>
+                            <li>Получать уведомление, если произошла ошибка с ключом доступа (Ключ доступа сообщества недействителен)</li>
+                            <li>Получать уведомление о зачислении средств на ваш аккаунт</li>
+                            <li>Получать уведомление, если заканчивается период действия тарифа</li>
+                            <li>Получать уведомление о новых обновлениях сервиса</li>
+                        </ol>
+                    </div>
+                    <div class="vk_notice_button">
+                        <div id="vk_allow_messages_from_community"></div>
+                    </div>
+                    <%
+                    VK.Widgets.AllowMessagesFromCommunity("vk_allow_messages_from_community", {height: 30}, 145285361);
+                    VK.Observer.subscribe("widgets.allowMessagesFromCommunity.allowed", function f(userId) {
+                        console.log(userId);
+                        console.log("allowed");
+                    });
+
+                    VK.Observer.subscribe("widgets.allowMessagesFromCommunity.denied", function f(userId) {
+                        console.log(userId);
+                        console.log("denied");
+                    });
+                    %>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+</section>

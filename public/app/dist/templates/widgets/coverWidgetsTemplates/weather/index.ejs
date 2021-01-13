@@ -1,0 +1,25 @@
+<% if (isShown) { %>
+    <div id="weather_<%= id %>"  title="<%= title %>" class="weather-widget draggable ui-widget-content" style="
+        font-size: <%= size %>px;
+        <% if (uppercase) { %>text-transform: uppercase; <% } %>
+        left: <%= weatherX %>px;
+        top: <%= weatherY %>px;
+        font-family: <%= font %>;
+        background: url('/imgs/weather_templates/<%= weatherTemplate %>/01d.png');
+    " data-action="show-settings">
+        <div id="weather_type_<%= id %>" class="weather-type draggable ui-widget-content" style="
+                left: <%= absoluteWeatherTypeX %>px;
+                top: <%= absoluteWeatherTypeY %>px;
+                color: <%= color %>;
+                white-space: nowrap;
+                "><% if (showType) { %>Ясно, <% } %>+27<%= textAfter %></div>
+
+        <div id="weather_wind_<%= id %>" class="weather-wind draggable ui-widget-content" style="
+                left: <%= absoluteWeatherWindX %>px;
+                top: <%= absoluteWeatherWindY %>px;
+                white-space: nowrap;
+                color: <%= color %>;
+                "> <% if (showWind) { %><p>Ветер: 1 м/c</p> <% } %></div>
+
+    </div>
+<% } %>

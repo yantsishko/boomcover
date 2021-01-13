@@ -1,0 +1,10 @@
+<% if (isShown) { %>
+    <div id="text_<%= id %>"  title="<%= title %>" class="text-widget draggable ui-widget-content" style="
+        font-size: <%= size %>px;
+        <% if (uppercase) { %>text-transform: uppercase; <% } %>
+        color: <%= color %>;
+        left: <%= textX %>px;
+        top: <%= textY %>px;
+        font-family: <%= font %>;
+    " data-action="show-settings"><%= text %></div>
+<% } %>
